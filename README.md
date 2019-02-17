@@ -1,0 +1,1 @@
+This repository consists of learning material notes, assignments and certificates of courses I have attended via Coursera
