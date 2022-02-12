@@ -176,3 +176,19 @@ OR
 rank_of_challenges IN (SELECT rank_of_challenges FROM cte GROUP BY rank_of_challenges HAVING COUNT(rank_of_challenges)=1)
 ORDER BY challenges_created DESC, hacker_id;
 ```
+
+8. How to compare columns in SQL
+    
+```SQL
+SELECT 
+    CASE
+        WHEN (A + B > C) AND (A + C > B) AND (B + C > A) THEN
+            CASE 
+                WHEN A = B AND B = C THEN 'Equilateral'
+                WHEN A=B OR B=C OR C=A THEN 'Isosceles'
+                ELSE 'Scalene'
+            END
+        ELSE 'Not A Triangle'
+    END
+FROM TRIANGLES;
+``
