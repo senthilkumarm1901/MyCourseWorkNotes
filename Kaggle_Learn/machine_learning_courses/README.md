@@ -15,7 +15,8 @@ key scikit-learn modules used: <br>
 - `from sklearn.model_selection import train_test_split`
 - `from sklearn.metrics import mean_absolute_error`
 
-
+Noteworthy Pandas Lines: <br>
+- X = df.copy() y = X.pop('TheDependentVariable') # remove the dependent variable from the X (features) and save in y)
 
 ## Intermediary ML
 Key Learnings:<br>
@@ -37,36 +38,37 @@ Key Learnings:<br>
     - Doing Inputer before train_test_split. Validation data then would have "seen" training data  
 
 - `Data Leakage Examples`:
+
 Example 1 - `Nike`: <br>
-    - Objective: How much shoelace material will be used?
-    - Situation: With the feature `Leather used this month` , the prediction accuracy is 98%+. Without this featur, the accuracy is just ~80%
-    - IsDataLeakage?: `Depends` ! 
-        :x: `Leather used this month` is a bad feature if the number is populated during the month (which makes it not available to predict the amount of shoe lace material needed)
-        ✔️ `Leather used this month` is a okay feature to use if the number determined during the beginning of the month (making it available during predition time on unseen data)
+- Objective: How much shoelace material will be used?
+- Situation: With the feature `Leather used this month` , the prediction accuracy is 98%+. Without this featur, the accuracy is just ~80%
+- IsDataLeakage?: `Depends` ! 
+    - :x: `Leather used this month` is a bad feature if the number is populated during the month (which makes it not available to predict the amount of shoe lace material needed)
+    - ✔️ `Leather used this month` is a okay feature to use if the number determined during the beginning of the month (making it available during predition time on unseen data)
 
 Example 2 - `Nike`: <br>
-    - Objective: How much shoelace material will be used? 
-    - Situation: Can we use the feature `Leather order this month`?
-    - IsDataLeakage? `Most likely no, however ...`
-       :x: If `Shoelaces ordered` (our Target Variable) is determined first and then only `Leather Ordered` is planned, <br>
-       then we won't have `Leather Ordered` during the time of prediction of unseen data
-       ✔️ If `Leather Ordered` is determined before `Shoelaces Ordered`, then it is a useful feature
+- Objective: How much shoelace material will be used?
+- Situation: Can we use the feature `Leather order this month`?
+- IsDataLeakage? `Most likely no, however ...`
+    - :x: If `Shoelaces ordered` (our Target Variable) is determined first and then only `Leather Ordered` is planned, <br>
+   then we won't have `Leather Ordered` during the time of prediction of unseen data
+    - ✔️ If `Leather Ordered` is determined before `Shoelaces Ordered`, then it is a useful feature
         
  Example 3 - `Cryptocurrency`: <br>
-    - Objective: Predicting tomo's crypto price with a error of <$1
-    - Situation: Are the following features susceptible to leakage?
-        - `Current price of Crypto`
-        - `Change in the price of crypto from 1 hour ago`
-        - `Avg Price of crypto in the largest 24 h0urs`
-        - `Macro-economic Features`
-        - `Tweets in the last 24 hours `
-    - IsDataLeakage? `No`, none of the features seem to cause leakage.
-    - However, more useful Target Variable `Change in Price (pos/neg) the next day`. If this can be consistently predicted higher, then it is a useful model
+- Objective: Predicting tomo's crypto price with a error of <$1
+- Situation: Are the following features susceptible to leakage?
+    - `Current price of Crypto`
+    - `Change in the price of crypto from 1 hour ago`
+    - `Avg Price of crypto in the largest 24 h0urs`
+    - `Macro-economic Features`
+    - `Tweets in the last 24 hours `
+- IsDataLeakage? `No`, none of the features seem to cause leakage.
+- However, more useful Target Variable `Change in Price (pos/neg) the next day`. If this can be consistently predicted higher, then it is a useful model
 
 
 Example 4 - `Surgeon's Infection Rate Performance`: <br>
-    - Objective: How to predict if a patient who has undergone a surgery will get infected post surgery?
-    - Situation: How can information about each surgeon's infection rate performance be carefully utilized while training?
+- Objective: How to predict if a patient who has undergone a surgery will get infected post surgery?
+- Situation: How can information about each surgeon's infection rate performance be carefully utilized while training?
    
    
 key scikit-learn modules used:
@@ -94,3 +96,39 @@ Noteworthy Pandas Lines:
 - Getting number of unique entries (`cardinality`) across `object` or categorical columns
     - `num_of_uniques_in_object_cols = list(map(lambda col: df[col].nunique(), object_cols))`  
     - `sorted(list(zip(object_cols, num_of_uniques_in_object_cols)), key=lambda x: x[1], reverse=True)`
+
+
+## Feature Engineering
+
+Key Learnings: 
+- Key Topics of this course: 
+    - Mutual Information
+    - Inventing New Features (like `apparent temparature` = {Air Temparature + Humidity + Wind Speed})
+    - Segmentation Features (using K-Means Clustering)
+    - Variance in the Dataset based features (using Principal Component Analysis)
+    - Encode (high cardinality) category variables using `Target Encoding`
+- Why Feature Engineering?
+    - To improve model performance
+    - To reduce computational complexity by combining many features into a few
+    - To improve interpretability of results
+- Wherever the model cannot identify a proper relationship between a dependent and a particular independent variable, <br>
+    - we can engineer/transform 1 or more of the independent variables 
+    - so as to let model learn a better relationship between the engineered features and dependent variable 
+- E.g.: In `compressive_strength` prediction in `cement` data, synthetic feature - ratio of Water to Cement helps
+- Mutually information is similar to correlation but correlation only looks for linear relationship whereas Mutual information can talk about any relationship
+- `Mutual Information` decribes relationship between two variables in terms of uncertainty (or certainty)
+    - For e.g.: Knowing `ExteriorQuality` of a house (one of 4 values - Fair, Typical, Good and Excellent) can help one reduce uncertainty over `SalePrice`. Better the ExteriorQuality, more the SalesPrice
+    - Typical values: If two variables have a MI score of 0.0 - they are totally indepndent. 
+    - Mutual Information is a logarithmic quantity. So it increases slowly
+    - Mutual Information is a univariate metric. MI can't detect interactions between features Meaning, if multiple features together make sense to a dependent variable but not independently, then MI cannot determine that. Before deciding a feature is unimportant from its MI score, it's good to investigate any possible interaction effects
+- Parallel Read: 
+    - [Feature Importances from fitted attribute](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html)  
+    - [Recursive Feature Elimination](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html)
+
+ sklearn modules: <br>
+ - `from sklearn.feature_selection import mutual_info_regression, mutual_info_classif`
+ 
+ Notworthy Pandas Lines: <br>
+ - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers
+ - `df[list_of_oh_encoded_col_name_values] = pd.get_dummies(df[colname])`
+ - 
