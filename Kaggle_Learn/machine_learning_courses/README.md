@@ -129,6 +129,5 @@ Key Learnings:
  - `from sklearn.feature_selection import mutual_info_regression, mutual_info_classif`
  
  Notworthy Pandas Lines: <br>
- - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers
- - `df[list_of_oh_encoded_col_name_values] = pd.get_dummies(df[colname])`
- - 
+ - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers using pandas
+ - `df[list_of_oh_encoded_col_name_values] = pd.get_dummies(df[colname])` # for converting a categorical variable into a list of oh-encoded-values using pandas
