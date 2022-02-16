@@ -121,7 +121,7 @@ Key Learnings:
     - Typical values: If two variables have a MI score of 0.0 - they are totally indepndent. 
     - Mutual Information is a logarithmic quantity. So it increases slowly
     - Mutual Information is a univariate metric. MI can't detect interactions between features Meaning, if multiple features together make sense to a dependent variable but not independently, then MI cannot determine that. Before deciding a feature is unimportant from its MI score, it's good to investigate any possible interaction effects
-- Parallel Read: 
+- Parallel Read for MI like metrics: 
     - [Feature Importances from fitted attribute](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html)  
     - [Recursive Feature Elimination](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html)
 - Types of New Features:
@@ -144,8 +144,25 @@ Key Learnings:
       - Ratios are difficult for many models, so can yeild better results when incorporated
       - Tree models do not have the ability to factor in cound feature
 
+- Clustering as `feature discovery` tool (add a categorical feature based on clustering of a subset of features)
+- Principal Component Analysis
+      - PCA is like partitioning of the variation in data
+      - Instead of describing the data with the original features,
+      - you do an orthogonl transformation of the features and compute "principal components" 
+      - which are used to explain the variation in the data. 
+- Convert the correlated variables into mutually orthogonal (uncorrelated) `principal components`
+- principal components can be more informative than the original features
+- Advantages of PCA:
+      - Dimensionality Reducton
+      - Anamoly Detection
+      - Boosting signal to noise ratio
+      - Decorrelation
+ - PCA works only for numeric variables; works best for scaled data  
+ - `Pipeline`: original_features --> Scaled_features --> PCA Features --> MI_computed_on_PCA_features
+
  sklearn modules: <br>
  - `from sklearn.feature_selection import mutual_info_regression, mutual_info_classif`
+ - `from sklearn.decomposition import PCA`
  
  Notworthy Pandas Lines: <br>
  - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers using pandas
