@@ -124,6 +124,25 @@ Key Learnings:
 - Parallel Read: 
     - [Feature Importances from fitted attribute](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html)  
     - [Recursive Feature Elimination](https://scikit-learn.org/stable/modules/generated/sklearn.feature_selection.RFE.html)
+- Types of New Features:
+    - Mathematical Transformations (Ratio, Log)
+    - Grouping Columns Features
+          - `df['New_Group_Feature'] = df[list_of_boolean_features].sum(axis=1)`
+          - `df['New_Group_Feature'] = df[list_of_numerical_features].gt(0).sum(axis=1)` gt -- greater than 
+    - Grouping `numerical` Rows Features
+          - `customer['Avg_Income_by_State'] = customer.groupby('State')['Income'].transform('mean')`
+    - Grouping `categorical` columns features
+          - `customer['StateFreq'] = customer.groupby('State')['State'].transform('count')/customer.State.count()`
+    - Split Features
+          - df[['Type', 'Count']] = df['some_var'].str.split(" ",expand=True)
+    - Combine Features
+          - `df['new_feture'] = df['var1'] + "_" + df['var2']` 
+       
+- Useful Tips on Feature Engineering:
+      - Linear models learn sum and differences naturally
+      - Neural Networks work better with scaled features
+      - Ratios are difficult for many models, so can yeild better results when incorporated
+      - Tree models do not have the ability to factor in cound feature
 
  sklearn modules: <br>
  - `from sklearn.feature_selection import mutual_info_regression, mutual_info_classif`
@@ -131,3 +150,4 @@ Key Learnings:
  Notworthy Pandas Lines: <br>
  - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers using pandas
  - `df[list_of_oh_encoded_col_name_values] = pd.get_dummies(df[colname])` # for converting a categorical variable into a list of oh-encoded-values using pandas
+ - 
