@@ -157,14 +157,22 @@ Key Learnings:
       - Anamoly Detection
       - Boosting signal to noise ratio
       - Decorrelation
- - PCA works only for numeric variables; works best for scaled data  
- - `Pipeline`: original_features --> Scaled_features --> PCA Features --> MI_computed_on_PCA_features
-
- sklearn modules: <br>
+- PCA works only for numeric variables; works best for scaled data  
+- `Pipeline`: original_features --> Scaled_features --> PCA Features --> MI_computed_on_PCA_features
+- `Target Encoding`: A Supervised Feature Engineering technique for encoding categorical variables by including the target labels
+- Target Encoding is basically assigning a number to a categorical variable where in the number is derived from target variable
+      - `autos['target_encoded_make'] =  autos.groupby('make')['Price'].transform('mean')`
+- Disadvantages of Target Encoding:
+      - Overfits for low volume (rare) classes
+      - What if there are missing values  
+- Where is Target Encoding most suitable?
+      - For High cardinality features
+      - Domain-motivated features (features that could have been scored poorly using feature importance metric function, we can unearth its real usefulness using target encoding)
+       
+sklearn modules: <br>
  - `from sklearn.feature_selection import mutual_info_regression, mutual_info_classif`
  - `from sklearn.decomposition import PCA`
  
  Notworthy Pandas Lines: <br>
  - `df[encoded_colname], unique_values = df[colname].factorize()` # for converting a categorical list of values into encoded numbers using pandas
  - `df[list_of_oh_encoded_col_name_values] = pd.get_dummies(df[colname])` # for converting a categorical variable into a list of oh-encoded-values using pandas
- - 
