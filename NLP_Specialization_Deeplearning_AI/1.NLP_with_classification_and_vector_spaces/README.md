@@ -54,9 +54,9 @@ Navie Bayes is based on the Baye's Rule:
 
 **Key Questions**:
 - Number of parameters in NB:
-      - Number of classes = n_y
-      - Number of features = n_x
-      - Number of parameters = n_y - 1 + n_x * n_y  
+     - Number of classes = n_y
+     - Number of features = n_x
+     - Number of parameters = n_y - 1 + n_x * n_y  
 
 Source: 
 - Deeplearning.ai NLP Specialization
