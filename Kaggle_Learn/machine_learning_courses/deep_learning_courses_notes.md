@@ -140,7 +140,49 @@ print("Minimum validation loss: {}".format(history_df['val_loss'].min()))
 
 ![image](https://user-images.githubusercontent.com/24909551/156341007-74fa6d34-652d-49b4-a238-5d2a802b08bb.png)
 
+### Batch Normalization
 
+**Why `BatchNorm`?**
+- Can prevent unstable training behaviour
+    - the changes in weights are proportion to how large the activations of neurons produce
+    - If some unscaled feature causes so much fluctuation in weights after gradient descend, it can cause unstable training behaviour
+- Can cut short the path to reaching the minima in the loss curve (hasten training)
+    - models with `BatchNorm` tend to need fewer epochs for training 
+
+
+**What is `BatchNorm`?**
+- On every batch of data subjected to training 
+    - normalize the batch data with the batch's mean and standard deviation
+    - multiply them with rescaling parameters that are learnt while training the model
+ 
+**Three places where `BatchNorm` can be used
+1. After a layer
+
+```python
+keras.Sequential([
+    layers.Dense(16,activation='relu'),
+    layers.BatchNormalization(),
+    ])
+```
+
+2. in-between the linear dense and activation function
+
+```python
+keras.Sequential([
+    layers.Dense(16),
+    layers.BatchNormalization(),
+    layers.Activation('relu')
+    ])
+```
+3. As the first layer of a network (role would then be similar to similar to Sci-Kit Learn's preprocessor modules like `StandardScaler`)
+
+```python
+keras.Sequential([
+    layers.BatchNormalization(),
+    layers.Dense(16),
+    layers.Activation('relu')
+    ])
+```
 
 Source: <br>
 - Kaggle.com/learn
