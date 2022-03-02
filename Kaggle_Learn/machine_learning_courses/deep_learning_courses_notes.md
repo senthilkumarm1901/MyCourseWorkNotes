@@ -155,7 +155,7 @@ print("Minimum validation loss: {}".format(history_df['val_loss'].min()))
     - normalize the batch data with the batch's mean and standard deviation
     - multiply them with rescaling parameters that are learnt while training the model
  
-**Three places where `BatchNorm` can be used
+**Three places where `BatchNorm` can be used**
 1. After a layer
 
 ```python
@@ -183,6 +183,22 @@ keras.Sequential([
     layers.Activation('relu')
     ])
 ```
+
+### LayerNormalization
+
+> It seems that it has been the standard to use batchnorm in CV tasks, and layernorm in NLP tasks
+> [Source](https://stats.stackexchange.com/questions/474440/why-do-transformers-use-layer-norm-instead-of-batch-norm)
+
+> Layer normalization normalizes input across the features instead of normalizing input features across the batch dimension in batch normalization. ... The authors of the paper claims that layer normalization performs better than batch norm in case of RNNs.
+> [Source](https://medium.com/techspace-usict/normalization-techniques-in-deep-neural-networks-9121bf100d8)
+
+
+### Dropout
+
+What is `Dropout`?
+- It is NN way of regularizing data by
+    - randomly dropping certain proportion of neurons in a layer
+     
 
 Source: <br>
 - Kaggle.com/learn
