@@ -69,6 +69,7 @@ Definition of terms:
 - `Gradient`: Tells us in what direction the NN needs to adjust its weights. It is computed as a partial derivative of a multivariable `cost func`
 - `cost_func`: Simplest one: Mean_absolute_error: mean(abs(y_true-y_pred))
 - `Gradient Descent`: You descend the loss curve to a minimum by reducing the weights `w = w - learning_rate * gradient`
+- `stochastic` - occuring by random chance. The selection of samples in each mini_batch is by random chance
  
 How SGD works:
 
@@ -96,6 +97,50 @@ history = model.fit(X_train, y_train,
 history_df = pd.DataFrame(history.history)
 history_df['loss'].plot()
 ```
+
+### Underfitting and Overfitting
+
+**Underfitting**
+- Capacity Increase
+    - If you increase the number of neurons in each layer (making it wider), it will learn the "linear" relationships in the features better
+    - If you add more layers to the network (making it deeper), it will learn the "non-linear" relationships in the features better
+    - Decision on `Wider` or `Deeper` networks depends on the dataset 
+
+**Overfitting**
+- Early Stopping: Interrupt the training process when the validation loss stops decreasing (stagnant)
+- Early stopping ensures the model is not learning the noises and generalizes well
+
+![image](https://user-images.githubusercontent.com/24909551/156336481-6c2ceb9b-97dc-494f-8e0d-07cc389664f3.png)
+
+- Once we detect that the validation loss is starting to rise again, we can reset the weights back to where the minimum occured.
+
+```python
+from tensorflow.keras.callbacks import EarlyStopping
+# a callback is just a function you want run every so often while the network trains
+
+# defining the early_stopping class
+early_stopping = EarlyStopping(min_delta = 0.001, # minimum about of change to qualify as improvement
+                               restore_best_weights=True,
+                               patience=20, # number of epochs to wait before stopping
+                              )
+
+
+history = model.fit(X_train, y_train, 
+    validation_data=(X_valid,y_valid),
+    batch_size=256,
+    epoch=500,
+    callbacks=[early_stopping],
+    verbose=0 #turn off logging
+    )
+    
+history_df = pd.DataFrame(history.history)
+history_df.loc[:, ['loss', 'val_loss']].plot();
+print("Minimum validation loss: {}".format(history_df['val_loss'].min()))
+```
+
+![image](https://user-images.githubusercontent.com/24909551/156341007-74fa6d34-652d-49b4-a238-5d2a802b08bb.png)
+
+
 
 Source: <br>
 - Kaggle.com/learn
