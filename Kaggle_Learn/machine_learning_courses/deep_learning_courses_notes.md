@@ -48,6 +48,7 @@
 from tensorflow import keras
 from tensorflow.keras import layers
 
+# defining a model
 model = keras.Sequential([
     # the hidden ReLu layers
     layers.Dense(units=4, activation='relu', input_shape=[2]),
@@ -57,7 +58,44 @@ model = keras.Sequential([
 ```
 
 ### Stochastic Gradient Descent
+- Stochastic Gradient Descent is an optimization algorithm that tells the NN 
+     - how to change its weight so that
+     - the loss curve shows a descending trend
 
+![image](https://user-images.githubusercontent.com/24909551/156314264-5de54383-e106-4d76-b700-f98a9870dd81.png)
+
+Definition of terms: 
+
+- `Gradient`: Tells us in what direction the NN needs to adjust its weights. It is computed as a partial derivative of a multivariable `cost func`
+- `cost_func`: Simplest one: Mean_absolute_error: mean(abs(y_true-y_pred))
+- `Gradient Descent`: You descend the loss curve to a minimum by reducing the weights `w = w - learning_rate * gradient`
+ 
+How SGD works:
+
+- 1. Sample some training data (called `minibatch`) and predict the output by doing forward propagation on the NN architecture
+- 2. Compute loss between predicted_values and target for those samples
+- 3. Adjust weights so that the above loss is minimized in the next iteration
+- Repeat steps 1, 2, and 3 for an entire round of data, then one `epoch` of training is over
+- For every minibatch there is only a small shift in the weights. The size of the shifting of weights is determined by `learning_rate` parameter
+
+
+```python
+# define the optimizer
+model.compile(optimizer="adam", loss="mae")
+```
+
+```python
+# fitting the model
+history = model.fit(X_train, y_train, 
+    validation_data=(X_valid,y_valid),
+    batch_size=256,
+    epoch=10,
+    )
+
+# plotting the loss curve
+history_df = pd.DataFrame(history.history)
+history_df['loss'].plot()
+```
 
 Source: <br>
 - Kaggle.com/learn
