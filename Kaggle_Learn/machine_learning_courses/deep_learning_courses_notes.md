@@ -196,9 +196,58 @@ keras.Sequential([
 ### Dropout
 
 What is `Dropout`?
-- It is NN way of regularizing data by
+- It is NN way of regularizing data (to avoid **overfitting**) by
     - randomly dropping certain proportion of neurons in a layer
-     
+
+How `Dropout` regularizes?
+- It makes it harder for neural network to overfit for the noise
+
+![image](https://user-images.githubusercontent.com/24909551/156499832-bebdc076-9f1b-4163-b24e-8650988e2fc2.png)
+
+
+```python
+keras.Sequential([
+    # ....
+    layers.Dropout(0.5), # add dropout before the next layer
+    layers.Dense(512, activation='relu'),
+    # ...
+
+])
+```
+
+When adding Dropout, it is important to add more neurons to the layers
+
+```python
+# define the model
+model = keras.Sequential([
+    layers.Dense(1024, activation='relu',input_shape=[11],
+    layers.Dropout(0.3),
+    layers.Dense(512, activation='relu',input_shape=[11],
+    layers.Dense(1024),
+    layers.BatchNormalization(),
+    layers.Activation('relu'),
+    layers.Dense(1024, activation='relu'),
+    layers.Dropout(0.3),
+    layers.BatchNormalization(),
+    layers.Dense(1),
+])
+
+# compile the model
+model.compile(optimizer='adam', loss='mae')
+
+# fit the model
+history = model.fit(X_train, y_train,
+                    validation_set=(X_valid, y_valid),
+                    batch_size=256,
+                    epochs=100,
+                    verbose=1,
+)
+
+# plot the learning curves
+history_df = pd.DataFrame(history.history)
+history_df.loc[:, ['loss','val_loss']].plot()
+```
+
 
 Source: <br>
 - Kaggle.com/learn
