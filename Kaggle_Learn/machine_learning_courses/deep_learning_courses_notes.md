@@ -303,6 +303,17 @@ print("Best Validation Accuracy {:.04f}".format(history_df['val_binary_accuracy'
 
 print("Best Training Loss {:04f}".format(history_df['loss'].min())
 print("Best Validation Loss {:.04f}".format(history_df['val_loss'].min())
+
+
+# predicting from a trained model
+y_test_predicted = model.predict_classes(X_test)
+print(y_test_predicted[0:5])
+# [0, 1, 1, 0, 0]
+
+y_test_predicted_proba = model.predict_proba(X_test)
+print(y_test_predicted_proba[0:5])
+# [0.08, 0.82, 0.78, 0.01, 0.0]
+
 ```
 
 
