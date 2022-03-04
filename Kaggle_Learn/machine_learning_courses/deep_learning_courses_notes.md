@@ -248,6 +248,67 @@ history_df = pd.DataFrame(history.history)
 history_df.loc[:, ['loss','val_loss']].plot()
 ```
 
+### Binary Classification
+
+- Accuracy cannot be used as loss function in NN because as ratio (`num_correct / total predictions`) changes in "jumps". We need a loss function that changes smoothly.
+- `Cross Entropy` = - <sup>1</sup>/<sub>N</sub> &sum; (i=1 to N) {(y_actual(i) * log(y_predicted(i)) + (1-y_actual(i)) * log(1-y_predicted(i)) } 
+- CE is measure to compute distance between probabilities. 
+    - If y_predicted(i) is farther from y_actual(i), CE(i) will be closer to 1. Vice versa, if y_predicted(i) is closer to y_actual(i), then CE(i) will be close to 0 
+
+![image](https://user-images.githubusercontent.com/24909551/156698252-11c2bbbc-ddc8-4204-bbfa-33cab65d15c0.png)
+
+- The additional sigmoid function is final layer
+
+![image](https://user-images.githubusercontent.com/24909551/156698746-6f4d2677-f118-4551-8b58-a0d8ec625aa8.png)
+
+```python
+# define the model
+model = keras.Sequential([
+    layers.Dense(1024,activation='relu',input_shape=[13]), #13 features
+    layers.Dense(512,activation='relu'), # hidden layer
+    layers.Dense(1,avtiation='sigmoid'), # output sigmoid layer for binary classification
+  ])
+  
+ # compile the model with optimizer, loss function and metric function
+model.compile(optimizer='adam', 
+              loss='binary_crossentropy',
+              metric=['binary_accuracy'] # accuracy metric is not used in the training of the model but just for evaluation
+              )
+     
+# define callback function which is called periodically while training the NN     
+early_stopping = keras.callbacks.EarlyStopping(min_delta=0.001, #minimum amount of change in loss to qualify as improvement 
+                                               patience=10, # no. of epochs with no change happening but to keep trying before stopping
+                                               restor_best_weights=True
+                                               )
+  
+# train the model
+history = model.fit(X_train, y_train,,
+                    validation_set=(X_valid,y_valid),
+                    batch_size=512,
+                    epochs=1000,
+                    callbacks=[early_stopping]),
+                    verbose=0, # hide the logging because we have so many epochs
+)
+
+
+# plot the curve after training is over
+history_df = pd.DataFrame(history.history)
+
+# plotting the loss and accuracy curves from epoch 5
+history_df.loc[5:, ['loss', 'val_loss']].plot()
+history_df.loc[5:,['binary_accuracy','val_binary_accuracy']].plot()
+
+print("Best Training Accuracy {:.04f}".format(history_df['binary_accuracy'].max())
+print("Best Validation Accuracy {:.04f}".format(history_df['val_binary_accuracy'].max())
+
+print("Best Training Loss {:04f}".format(history_df['loss'].min())
+print("Best Validation Loss {:.04f}".format(history_df['val_loss'].min())
+```
+
+
+
+
+
 
 Source: <br>
 - Kaggle.com/learn
