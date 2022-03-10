@@ -44,3 +44,5 @@ Numpy array:[[2 4]
 Tensor array:tensor([[2, 4],
         [6, 8]])
 ```
+
+
