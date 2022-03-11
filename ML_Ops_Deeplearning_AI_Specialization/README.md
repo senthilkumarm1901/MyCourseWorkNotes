@@ -29,22 +29,23 @@ This directory will hold my notes from MLOps specialization
 
 ![image](https://user-images.githubusercontent.com/24909551/157711630-6ba1b021-1957-40e9-b06b-33349499fbcc.png)
 
-- The ML Project Lifecycle
+
 > (1) Scoping --> (2) Data --> (3) Modeling --> (4) Deployment
-    - 1. Scoping: 
-        - Define the Project Requirements
-    - 2. Data:
-        - Define Data
-        - Establish baseline (e.g.: how much should the o/p accuracy)
-        - Label Data
-        - Feature Engineer Data
-    - 3. Modeling:
-        - Select the right model and hyperparameters to train the model
-        - Perform error analysis
-    - 4. Deployment:
-        - Deploy in an API/UI in production
-        - Monitor Model predictions
-        - Maintain Infrastructure requirements
+- The ML Project Lifecycle   
+   - 1. Scoping: 
+         - Define the Project Requirements
+   - 2. Data:
+         - Define Data
+         - Establish baseline (e.g.: how much should the o/p accuracy)
+         - Label Data
+         - Feature Engineer Data
+   - 3. Modeling:
+         - Select the right model and hyperparameters to train the model
+         - Perform error analysis
+   - 4. Deployment:
+         - Deploy in an API/UI in production
+         - Monitor Model predictions
+         - Maintain Infrastructure requirements
 
 > If there is "concept drift" during deployment, get back to reflecting the change in the data
 > Retrain model and deploy the newly trained model in production
