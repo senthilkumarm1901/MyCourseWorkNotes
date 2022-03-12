@@ -93,5 +93,40 @@ How `streaming quality` can be improved:
 - How much % of the exposed/treated group showed an outcome to a new treatment viz-a-viz the % of controls/unexposed group showed an outcome with standard treatment?
 
 
+## 4. How `Chicismo` app grew its women user base ([source](https://medium.com/hackernoon/how-we-grew-from-0-to-4-million-women-on-our-fashion-app-with-a-vertical-machine-learning-approach-f8b7fc0a89d7))
+
+- Used Collaborative Filtering Process to recommend right fashion preferrable to their taste
+
+![image](https://user-images.githubusercontent.com/24909551/158019078-584d8cd9-6729-4870-98dd-e4de8b68de5e.png)
+
+## 5. Search Ranking of Airbnb Experiences | [Source](https://medium.com/airbnb-engineering/machine-learning-powered-search-ranking-of-airbnb-experiences-110b4b1a0789)
+
+![image](https://user-images.githubusercontent.com/24909551/158026138-1f5210ca-7374-41ae-810b-d662d9974063.png)
+
+- In Stage 1: Everyone had the same ranking of experiences
+- In Stage 2: Started personalizing with user features
+- In Stage 3: Used online scoring (query features available at the time of querying used in inferencing)
+
+Example Experience Features: <br>
+- Experience duration
+- Price and Price/hour
+- Category of Experience (music class, surfing, cooking)
+- Review (rating, number of reviews, <s>textual comments </s>)
+- Number of bookings for that experience
+- Click-Through-Rate
+
+Prediction Variable: Search Ranking based on probability of booking
+Model Used: Gradient Boosted Decision Trees (GBDT)
+- No need to scale features
+- No need to treat missing values
+- Changes in raw counts in a non-linear model like GBDT can influence predictions so much
+    - Instead of `no. of bookings`, can use the ratio of `no. of bookings per 1000 viewers`
+
+
+## 6. Fraud Detection in Lyft ([article writtent in 2018](https://eng.lyft.com/from-shallow-to-deep-learning-in-fraud-9dafcbcef743)
+
+- Initially a logistic regression model was employed. Enabled in understanding `important features`
+- As fraud techniques became more complex, complex models were used
+- Complexity vs Interpretability | Performance vs Ease of Deployment
 
 
