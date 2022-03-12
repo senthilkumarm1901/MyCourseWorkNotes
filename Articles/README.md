@@ -2,7 +2,7 @@ This directory will contain notes from some really good blog articles I have rea
 
 # [Analysis of 10 ML Case Studies](https://medium.com/@tzjy/10-wonderful-machine-learning-case-studies-from-tech-company-blogs-860ad7b8d1b0)
 
-## Prediction of Value of Homes in Airbnb (article came in 2017)
+## 1. Prediction of Value of Homes in Airbnb (article came in 2017)
 
 **Airbnb Background**:<br>
 - ML Infra team built `feature repository` that can be used by Data Scientists to develop better ML models
@@ -54,4 +54,22 @@ Four steps they followed to build a LTV model (a regression problem): <br>
 
 - In some cases, just using RMSE to select a model may not be enough. We need to consider "interpretability" too. 
  
-[Source](https://medium.com/airbnb-engineering/using-machine-learning-to-predict-value-of-homes-on-airbnb-9272d3d4739d)
+[Source](https://medium.com/airbnb-engineering/using-machine-learning-to-predict-value-of-homes-on-airbnb-9272d3d4739d)\
+
+
+## 2. Improve `streaming quality` using Machine Learning (Company: Netflix) 
+[article written in 2018](https://netflixtechblog.com/using-machine-learning-to-improve-streaming-quality-at-netflix-9651263ef09f)
+
+How `streaming quality` is measured:
+- Video Quality
+- Amount of wait time for the video during initial load or playback
+- Amount of bufferring 
+
+How `streaming quality` can be improved:
+- Network quality characterization and prediction
+    - Will network be more congested always? or during some time of the day?    
+- `Predictive Caching`
+- Adaptive Video Quality (for each chunk, what is the best quality that we can provide)
+- Device Anamolies (may be changes to infra or UI is affecting performance?)
+
+## 3. 6 lessons from training 150 ML models in booking.com [source](https://medium.com/@tzjy/10-wonderful-machine-learning-case-studies-from-tech-company-blogs-860ad7b8d1b0)
