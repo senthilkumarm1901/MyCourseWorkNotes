@@ -125,8 +125,34 @@ Model Used: Gradient Boosted Decision Trees (GBDT)
 
 ## 6. Fraud Detection in Lyft ([article writtent in 2018](https://eng.lyft.com/from-shallow-to-deep-learning-in-fraud-9dafcbcef743)
 
+- About `Lyft`: It is a ride-hailing app | competitor to `Uber`
+- Fraud detection is a classification problem
 - Initially a logistic regression model was employed. Enabled in understanding `important features`
 - As fraud techniques became more complex, complex models were used
-- Complexity vs Interpretability | Performance vs Ease of Deployment
+    - Upgrading model from Logistic Regression to Gradient-boosted Decision Trees, improved precision by 60% for the operating recall and set of features 
+    - Later moved from GBDT to DL models
+  
+![image](https://user-images.githubusercontent.com/24909551/158047351-73732bdb-e470-4bb7-96a7-c87c6fb91820.png)
+
+- Discussion in the article: Complexity vs Interpretability | Performance vs Ease of Deployment
+- Talks about roles of Model Development vs Model Deployment teams
+
+![image](https://user-images.githubusercontent.com/24909551/158047494-32596aff-b662-463d-9790-fef8a7875a4c.png)
+
+## 7. Path Optimization ([article written in 2017](https://tech.instacart.com/space-time-and-groceries-a315925acf3a))
+
+- About `Instacart`: It is a groceries delivery company | Similar to Bigbasket
+- Optimizing path for efficient and timely delivery of groceries to households in the US
 
 
+## 8. OCR + Word Detector Model for Dropbox ([source](https://dropbox.tech/machine-learning/creating-a-modern-ocr-pipeline-using-computer-vision-and-deep-learning))
+
+- Utilized in Dropbox product `mobile document scanner`
+
+## 9. Uber Big Data Platform ([source](https://eng.uber.com/uber-big-data-platform/))
+
+- Handling 100+ Petabytes of data with minute legacy
+
+## 10. Uber Michalengelo: ([source](https://eng.uber.com/scaling-michelangelo/))
+
+- Scaling ML models in production
