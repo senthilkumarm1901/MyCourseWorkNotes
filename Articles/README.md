@@ -143,16 +143,83 @@ Model Used: Gradient Boosted Decision Trees (GBDT)
 
 - About `Instacart`: It is a groceries delivery company | Similar to Bigbasket
 - Optimizing path for efficient and timely delivery of groceries to households in the US
+- Type of Problem: Stage 0 (over-simplified view): `Traveling Salesman Problem` 
 
+![image](https://user-images.githubusercontent.com/24909551/158048447-a69c69ea-a7fc-4945-932e-ebfd0cc69e17.png)
+
+- Stage 1 (simplified view) `Vehicle Routing Problem`
+
+![image](https://user-images.githubusercontent.com/24909551/158048428-076b24e9-6b7b-44c9-81db-c4996bd52024.png)
+
+- Stage 2 (decent but still inadequate view) `Vehicle Routing Problem with Time Windows`
+
+![image](https://user-images.githubusercontent.com/24909551/158048594-1d419dec-aa19-487e-9403-9f258e6df1c3.png)
+
+- Stage 3 (real-life view of the problem) `Capacitated Vehicle Routing Problem with Time Windows and Multiple Routes`
+    - Rationale for `Capacitated`: Some have small vehicles and some large. Some cannot transport alcoholo and some can 
+![image](https://user-images.githubusercontent.com/24909551/158048651-365cafa6-3beb-4151-b5f9-bc03c0e38f60.png)
+
+Goal of the company: reduce average delivery time
+- Shown below as % of max time taken
+
+![image](https://user-images.githubusercontent.com/24909551/158048719-eb1c6337-e458-405c-87bd-4b39d9d1c496.png)
+
+This goal of `logistics fulfillment` in the larger picture:
+
+![image](https://user-images.githubusercontent.com/24909551/158048745-5d4c443b-06d4-4742-8c79-2d7eba25a87b.png)
 
 ## 8. OCR + Word Detector Model for Dropbox ([source](https://dropbox.tech/machine-learning/creating-a-modern-ocr-pipeline-using-computer-vision-and-deep-learning))
 
-- Utilized in Dropbox product `mobile document scanner`
+- The OCR + Word dector pipeline utilized in Dropbox product `mobile document scanner`
+- OCR - detects what characters are mentioned in the image
+- Word detector - detects where the words are occuring in the image
 
 ## 9. Uber Big Data Platform ([source](https://eng.uber.com/uber-big-data-platform/))
 
 - Handling 100+ Petabytes of data with minute legacy
+- A fundamental article on the evaluation of Data Engineering at Uber
+- Phase 1: `Before 2014`:
+    - Used Online Transaction Processing (OLTP) Databse (MySQL, PostgreSQL) 
 
-## 10. Uber Michalengelo: ([source](https://eng.uber.com/scaling-michelangelo/))
+![image](https://user-images.githubusercontent.com/24909551/158053026-f5b52368-b76a-4bc0-aecf-94bd71c22158.png)
 
-- Scaling ML models in production
+- Phase 2: From OLTP to OLAP
+    - All of Uber's Online Analytical Processing needs were saved in a warehouse software known as `Vertica` 
+    > *developed multiple ad hoc ETL (Extract, Transform, and Load) jobs that copied data from different sources (i.e. AWS S3, OLTP databases, service logs, etc.) into Vertica*
+
+![image](https://user-images.githubusercontent.com/24909551/158053171-b9ca8d2d-f1cc-41db-ab52-dee07f1df294.png)
+
+- Global View (of all regions)
+- All data in one place
+
+- Phase 3: Adding `Hadoop` before `OLAP`
+    - In the pic below, before dumping data into `hadoop` database, there is no transformatio done. Only "EL" jobs. But schema enforced which improved reliability of data
+    - The "ETL" jobs were performed on only **some** of the data in `hadoop` before loading into OLAP data warehouse `Vertica`. That data used by `city operators` were alone transformed and loaded into `Vertica`
+    - How was data accessed in Hadoop - Using 3 different query engines
+          - `Presto` - A distributed SQL query engine to enable interactive ad hoc user queries
+          - `Apache Spark` for prgrammatic access to small to medium sized queries
+          - `Apache Hive` for large queries
+
+
+## 10. Uber Michalengelo: ([article written in 2018](https://eng.uber.com/scaling-michelangelo/))
+
+- Scaling ML models in production using Michelangelo
+
+![image](https://user-images.githubusercontent.com/24909551/158050161-34c344c3-9640-4c30-9459-5f9ad32be168.png)
+
+- 1. ML models in `Uber Eats`:
+    - Ranking of Restaurants and Menu items (based on historical data of user purchases and current search query and general features like Ratings)
+    - ETA Prediction
+- 2. Uber Marketplace Forecasting: 
+    - `Spatiotemporal` forecasting models to predict 
+          - where rider `demand` will be and 
+          - where driver `supply` will be
+    - Using the predicted supply-demand imbalances, send drivers to places well-ahead in time so that they get maximum opportunity for rides
+- 3. Customer Support
+    - Models built at `Michelangelo` used to `automate or speed up` variety of customer support domain issues   
+    - Tree based models sped up the resolution of issues by 10% (compared to no models) and DL models added an additional 6% time efficiency. 
+- 4. Ride Check
+    - If the ride is halted in an unusual place/time for an extended time, it can alert for crash or other safety risk issues
+- 5. Estimated Time of Arrivals (ETAs)
+    - Uber's Map Services Team Estimate the `base `ETA values for each `segment`      
+    - Accurate ETAs are critical to positive user experience and ETAs are critical for pricing and routing
