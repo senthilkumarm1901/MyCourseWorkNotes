@@ -1,6 +1,7 @@
 This directory will contain notes from some really good blog articles I have read (or saved for reading)
 
-# [Analysis of 10 ML Case Studies](https://medium.com/@tzjy/10-wonderful-machine-learning-case-studies-from-tech-company-blogs-860ad7b8d1b0)
+<h1 align="center"> Analysis of 10 ML Case Studies </h1>
+[Source]((https://medium.com/@tzjy/10-wonderful-machine-learning-case-studies-from-tech-company-blogs-860ad7b8d1b0))
 
 ## 1. Prediction of Value of Homes in Airbnb (article came in 2017)
 
@@ -193,12 +194,20 @@ This goal of `logistics fulfillment` in the larger picture:
 - All data in one place
 
 - Phase 3: Adding `Hadoop` before `OLAP`
+
+![image](https://user-images.githubusercontent.com/24909551/158053737-9cc9f1f8-8be7-4229-940c-df6e8496a58f.png)
+
     - In the pic below, before dumping data into `hadoop` database, there is no transformatio done. Only "EL" jobs. But schema enforced which improved reliability of data
     - The "ETL" jobs were performed on only **some** of the data in `hadoop` before loading into OLAP data warehouse `Vertica`. That data used by `city operators` were alone transformed and loaded into `Vertica`
     - How was data accessed in Hadoop - Using 3 different query engines
           - `Presto` - A distributed SQL query engine to enable interactive ad hoc user queries
           - `Apache Spark` for prgrammatic access to small to medium sized queries
           - `Apache Hive` for large queries
+
+- Phase 4: Reduce Data Ingestion latency further   
+    - Introduced `Spark Hudi` library 
+
+![image](https://user-images.githubusercontent.com/24909551/158054072-ffe57c38-cfb4-4cbb-b148-f51cbf995395.png)
 
 
 ## 10. Uber Michalengelo: ([article written in 2018](https://eng.uber.com/scaling-michelangelo/))
