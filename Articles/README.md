@@ -239,3 +239,22 @@ This goal of `logistics fulfillment` in the larger picture:
 </details>
 
 
+<h1 align="center"> A Review of News Recommender Systems </h1>
+
+[source](https://link.springer.com/article/10.1007/s10462-021-10043-x)
+
+Table of Contents:
+- Understanding News Article Characteristics (`features` of news articles)
+- Recommender Systems Approaches (CF and CBF)
+- Measurment Objectives
+- Open source Datasets   
+
+Detailed Notes: WIP
+
+
+<h1 align="center"> Evolution of Transfer Learning in NLP </h1>
+
+source1: [Pre-trained Models for Natural Language Processing: A Survey](https://arxiv.org/abs/2003.08271) <br>
+source2: [Evolution of Transfer Learning in NLP](https://arxiv.org/abs/1910.07370)
+
+Table of Contents: WIP
