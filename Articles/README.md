@@ -4,6 +4,8 @@ This directory will contain notes from some really good blog articles I have rea
 
 [Source](https://medium.com/@tzjy/10-wonderful-machine-learning-case-studies-from-tech-company-blogs-860ad7b8d1b0)
 
+<details><summary> My Detailed Notes </summary>
+
 ## 1. Prediction of Value of Homes in Airbnb (article came in 2017)
 
 **Airbnb Background**:<br>
@@ -233,3 +235,7 @@ This goal of `logistics fulfillment` in the larger picture:
 - 5. Estimated Time of Arrivals (ETAs)
     - Uber's Map Services Team Estimate the `base `ETA values for each `segment`      
     - Accurate ETAs are critical to positive user experience and ETAs are critical for pricing and routing
+
+</details>
+
+
