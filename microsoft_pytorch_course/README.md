@@ -9,7 +9,8 @@
 
 ### Introduction to PyTorch
 
-#### What is a Tensor?
+<details><summary><code> What is a Tensor?</code></summary>
+
 
 - Tensors are **like** numerical arrays that encode the input, output and weights/parameters of a model
 - Typical 1D and 2D arrays:
@@ -45,4 +46,4 @@ Tensor array:tensor([[2, 4],
         [6, 8]])
 ```
 
-
+</details>
