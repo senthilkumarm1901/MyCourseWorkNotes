@@ -164,6 +164,8 @@ tensor.t_()
                                         dtype=dtype=troch.float).scatter_(dim=0,
                                                         index=torch.tensor(y), value=1))
     
+    # ToTensor() --> normalizes the features before feeding to model
+    
     training_data = datasets.FashionMNIST(
         root="data", # the path where the train/test data is stored
         train=True, # False if it is a test dataset 
@@ -205,5 +207,12 @@ tensor.t_()
     label = train_labels[0]
     plt.imshow(img, cmap="gray")
 ```   
+    **What does normalization do?**: <br>
+    - Changes the range of the data
+    - When one pixel value is 15 and another pixel is 190, the higher pixel value will deviate the learning 
+    
+    **Why do we do normalization of data before training a DL**:
+    - Prediction accuracy is better for normalized data
+    - Model can learn faster if data is normalized
     
 </details>
