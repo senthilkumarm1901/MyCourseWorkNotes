@@ -137,82 +137,83 @@ tensor.t_()
 
 
 <details><summary><code> Dataset and DataLoader </code></summary>
-    
-    Two data `primitives` to handle data efficiently: <br>
-    - `torch.utils.data.Dataset`
-    - `torch.utils.data.DataLoader` 
-    
-    What does `Dataset` do?
-    - `Dataset`: Stores data samples and their corresponding labels
-    - `DataLoader`: Wraps an iterable around Dataset to enable easy access to the samples. `DataLoader` can also be used along with `torch.multiprocessing`
-    - `torchvision.datasets` and `torchtext.datasets` are both subclasses of `torch.utils.data.Dataset` (they have __getitem__ and __len__ methods implemented) and also they can be passed to a `torch.utils.data.DataLoader`
-    
-    **Arguments of a pre-loaded dataset like `FashionMNIST`**:<br>
-
-    ```python
-    import torch
-    from torch.utils.data import Dataset
-    from torchvision import datasets
-    from torchvision.transforms import ToTensor, Lambda
-    
-    import matplotlib.pyplot as plt
-    
-    # turn the integer y values into a `one_hot_encoded` vector 
-    # 1. create a zero tensor of size 10 torch.zeros(10, dtype=torch.float)
-    # 2. `scatter_` assigns a value =1
-    the_target_lambda_function = Lambda(lambda y: torch.zeros(10,
-                                        dtype=dtype=troch.float).scatter_(dim=0,
-                                                        index=torch.tensor(y), value=1))
-    
-    # ToTensor() --> normalizes the features before feeding to model
-    
-    training_data = datasets.FashionMNIST(
-        root="data", # the path where the train/test data is stored
-        train=True, # False if it is a test dataset 
-        download=True, # downloads the data from Web if not available at root
-        transform=ToTensor(), # transform the features; converts PIL image or numpy array into a FloatTensor and scaled the image's pixel intensity to the range [0,1]
-        target_transform=the_target_lambda_function
-    )
    
-    test_data = datasets.FashionMNIST(
-        root="data",
-        train=False,
-        download=True,
-        transform=ToTensor(),
-        target_transform=torch.nn.functional.one_hot(y, num_classes=10) # alternate way
-    )
-    ```    
-  
-    **How should the data be preprocessed before training in DL?**: <br>
-    - Pass samples of data in `minibatches`
-    - reshuffle the data at every epoch to overfitting
-    - leverage Python's `multiprocessing` to speed up data retrieval
-    - `torch.utils.data.DataLoader` abstracts all the above steps
-    
-    ```python
-    train_dataloader = DataLoader(training_data, 
-                                  batch_size=64, 
-                                  shuffle=True)
-    
-    test_dataloader = DataLoader(test_data, 
-                                 batch_size=64,
-                                 shuffle=True)
-    ```
-    
-    **How to iterate through DataLoader?**: <br>
-    
-    ```python
-    train_features, train_labels = next(iter(train_dataloader))
-    feature_data = img  = train_features[0].squeeze()
-    label = train_labels[0]
-    plt.imshow(img, cmap="gray")
+
+Two data `primitives` to handle data efficiently: <br>
+- `torch.utils.data.Dataset`
+- `torch.utils.data.DataLoader` 
+
+What does `Dataset` do?
+- `Dataset`: Stores data samples and their corresponding labels
+- `DataLoader`: Wraps an iterable around Dataset to enable easy access to the samples. `DataLoader` can also be used along with `torch.multiprocessing`
+- `torchvision.datasets` and `torchtext.datasets` are both subclasses of `torch.utils.data.Dataset` (they have __getitem__ and __len__ methods implemented) and also they can be passed to a `torch.utils.data.DataLoader`
+
+**Arguments of a pre-loaded dataset like `FashionMNIST`**:<br>
+
+```python
+import torch
+from torch.utils.data import Dataset
+from torchvision import datasets
+from torchvision.transforms import ToTensor, Lambda
+
+import matplotlib.pyplot as plt
+
+# turn the integer y values into a `one_hot_encoded` vector 
+# 1. create a zero tensor of size 10 torch.zeros(10, dtype=torch.float)
+# 2. `scatter_` assigns a value =1
+the_target_lambda_function = Lambda(lambda y: torch.zeros(10,
+                                    dtype=dtype=troch.float).scatter_(dim=0,
+                                                    index=torch.tensor(y), value=1))
+
+# ToTensor() --> normalizes the features before feeding to model
+
+training_data = datasets.FashionMNIST(
+    root="data", # the path where the train/test data is stored
+    train=True, # False if it is a test dataset 
+    download=True, # downloads the data from Web if not available at root
+    transform=ToTensor(), # transform the features; converts PIL image or numpy array into a FloatTensor and scaled the image's pixel intensity to the range [0,1]
+    target_transform=the_target_lambda_function
+)
+
+test_data = datasets.FashionMNIST(
+    root="data",
+    train=False,
+    download=True,
+    transform=ToTensor(),
+    target_transform=torch.nn.functional.one_hot(y, num_classes=10) # alternate way
+)
+```    
+
+**How should the data be preprocessed before training in DL?**: <br>
+- Pass samples of data in `minibatches`
+- reshuffle the data at every epoch to overfitting
+- leverage Python's `multiprocessing` to speed up data retrieval
+- `torch.utils.data.DataLoader` abstracts all the above steps
+
+```python
+train_dataloader = DataLoader(training_data, 
+                              batch_size=64, 
+                              shuffle=True)
+
+test_dataloader = DataLoader(test_data, 
+                             batch_size=64,
+                             shuffle=True)
+```
+
+**How to iterate through DataLoader?**: <br>
+
+```python
+train_features, train_labels = next(iter(train_dataloader))
+feature_data = img  = train_features[0].squeeze()
+label = train_labels[0]
+plt.imshow(img, cmap="gray")
 ```   
-    **What does normalization do?**: <br>
-    - Changes the range of the data
-    - When one pixel value is 15 and another pixel is 190, the higher pixel value will deviate the learning 
-    
-    **Why do we do normalization of data before training a DL**:
-    - Prediction accuracy is better for normalized data
-    - Model can learn faster if data is normalized
-    
+**What does normalization do?**: <br>
+- Changes the range of the data
+- When one pixel value is 15 and another pixel is 190, the higher pixel value will deviate the learning 
+
+**Why do we do normalization of data before training a DL**:
+- Prediction accuracy is better for normalized data
+- Model can learn faster if data is normalized
+
 </details>
