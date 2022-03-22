@@ -222,7 +222,7 @@ When adding Dropout, it is important to add more neurons to the layers
 model = keras.Sequential([
     layers.Dense(1024, activation='relu',input_shape=[11],
     layers.Dropout(0.3),
-    layers.Dense(512, activation='relu',input_shape=[11],
+    layers.Dense(512, activation='relu',
     layers.Dense(1024),
     layers.BatchNormalization(),
     layers.Activation('relu'),
