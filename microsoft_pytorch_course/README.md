@@ -237,7 +237,7 @@ plt.imshow(img, cmap="gray")
 - Activation Functions add non-linearity to the model    
 - Different Activation Functions: <br>
     - **Sigmoid**: <sup>1</sup>/<sub>(1 + exp(-x))</sub>
-    - **Softmax**: `from numpy import exp, sum` <sup>exp(x)</sup> / <sub>(sum(exp(x)))</sub>
+    - **Softmax**: <sup>exp(x)</sup> / <sub>(sum(exp(x)))</sub>
     - **ReLU**: max(0,x)
     - **Tanh**: <sup>(exp(x) - exp(-x))</sup>/<sub>(exp(x) + exp(-x))</sub>
 
