@@ -217,3 +217,30 @@ plt.imshow(img, cmap="gray")
 - Model can learn faster if data is normalized
 
 </details>
+
+    
+<details><summary>Building <code> Model Layers </code> in PyTorch</summary>
+    
+**Components of a Neural Network**:
+
+- Typical Neural Network: <br>
+
+![image](https://user-images.githubusercontent.com/24909551/160055546-f6150c41-acb0-44a4-942e-0d20c86e8972.png)
+
+- Activation Function, Weight and Bias
+
+![image](https://user-images.githubusercontent.com/24909551/160055714-0bfb081d-6c1b-4733-a226-d7db71e74fec.png)
+
+- Linear weighted sum of inputs: x = &sum;(`weights` * `inputs`) + `bias`    
+- f(x) = activation_func(x)
+
+- Activation Functions add non-linearity to the model    
+- Different Activation Functions: <br>
+    - **Sigmoid**: <sup>1</sup>/<sub>(1 + exp(-x))</sub>
+    - **Softmax**: `from numpy import exp, sum` <sup>exp(x)</sup> / <sub>(sum(exp(x)))</sub>
+    - **ReLU**: max(0,x)
+    - **Tanh**: <sup>(exp(x) - exp(-x))</sup>/<sub>(exp(x) + exp(-x))</sub>
+
+    
+
+    </details>
