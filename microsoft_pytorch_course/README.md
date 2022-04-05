@@ -297,11 +297,6 @@ y_pred = pred_probab.argmax(1)
 print(f"Predicted class: {y_pred}")
 ```
 
-```python
-print("Weights stored in first layer: {model.linear_relu_stack[0].weight} \n")
-print("Bias stored in first layer: {model.linear_relu_stack[0].bias} \n") 
-```
-
 - **Step 1**:Convert `28*28` into a contiguous array of 784 pixel values
     
 ```python
@@ -316,7 +311,7 @@ print(flat_image.size())
     
 ```python    
 # step 2: apply linear transformation `weight * input + bias`
-layer1 = nn.Linear(in_features=28*28, out_features=20) # instantiate
+layer1 = nn.Linear(in_features=28*28, out_features=512) # instantiate
 hidden1 = layer1(flat_image) # pass the prev layer (flattened image) into the instance
 print(hidden1.size())
 ```
@@ -327,15 +322,60 @@ print(hidden1.size())
 relu_activation = nn.ReLU() #instantiate
 hidden1 = relu_activation(hidden1)
 ```    
+Repeat Step 2 and 3 for `hidden2`: <br>
+
+```python
+layer2 = nn.Linear(in_features=512, out_features=512)
+hidden2 = layer2(hidden1)
+hidden2 = relu_activation(hidden2)
+```    
+    
 - **Step 4**: Compute the logits
     
-
+```python
+# a simple 1 hidden layer NN with 20 neurons in the hidden layer
+nn_seq_modules = nn.Sequential(
+                    flatten,
+                    layer1,
+                    relu_activation,
+                    layer2,
+                    relu_activation,
+                    nn.Linear(512, 10), # the output                )
+input_image = torch.rand(3, 28, 28)
+logits =  nn_seq_modules(input_image)   
+```
     
 - **Step 5**: Apply `Softmax` function
+    
+```python
+
+softmax = nn.Softmax(dim=1)
+predict_prp=obab = softmax(logits)
+
+```
     
 - Full NN workflow: 
  
 ![image](https://user-images.githubusercontent.com/24909551/161696907-8672f820-3293-4390-b153-bf702731352d.png)
 
- 
+
+**How to see internal layers of a NN in PyTorch**:
+
+```python
+print("Weights stored in first layer: {model.linear_relu_stack[0].weight} \n")
+print("Bias stored in first layer: {model.linear_relu_stack[0].bias} \n") 
+    
+from name, param in model.named_parameters():
+    print(f"Layer: {name} | Size: {param.size()}"
+```
+    
+```bash
+Layer: linear_relu_stack.0.weight | Size: torch.Size([512, 784])
+Layer: linear_relu_stack.0.bias | Size: torch.Size([512])
+Layer: linear_relu_stack.2.weight | Size: torch.Size([512, 512])
+Layer: linear_relu_stack.2.bias | Size: torch.Size([512])
+Layer: linear_relu_stack.4.weight | Size: torch.Size([10, 512])
+Layer: linear_relu_stack.4.bias | Size: torch.Size([10])
+```
+    
 </details>
