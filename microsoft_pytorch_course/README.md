@@ -258,9 +258,10 @@ print(f'Using {device} device')
 ```
     
 - Initialize all layers in `__init__` module
-- Build a 3-layer NN with flattened `28*28` image as input
-- 2 hidden layers will have 512 neurons each
-- The third layer will have 10 neurons each corresponding to the number of classes
+- Build a 3-layer NN with 
+    - flattened `28*28` image as input,
+    - 2 hidden layers will have 512 neurons each and
+    - the third layer will have 10 neurons each corresponding to the number of classes
     
 ```python
 class NeuralNetwork(nn.Module):
@@ -285,8 +286,8 @@ model = NeuralNetwork().to(device)
     
 ```
 
-- How a forward pass would like like: 
-    - Why 
+- How a forward pass would be like: 
+    - Why `model(X)` instead of `model.forward(X)`? [Source]() 
     
 ```python
 x = torch.rand(1, 28, 28, device=device)
