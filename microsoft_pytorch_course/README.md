@@ -350,7 +350,7 @@ logits =  nn_seq_modules(input_image)
 ```python
 
 softmax = nn.Softmax(dim=1)
-predict_prp=obab = softmax(logits)
+predict_probab = softmax(logits)
 
 ```
     
@@ -376,6 +376,30 @@ Layer: linear_relu_stack.2.weight | Size: torch.Size([512, 512])
 Layer: linear_relu_stack.2.bias | Size: torch.Size([512])
 Layer: linear_relu_stack.4.weight | Size: torch.Size([10, 512])
 Layer: linear_relu_stack.4.bias | Size: torch.Size([10])
-```
+```  
+</details>
+ 
+ <details> <summary> Automatic Differentiation <code>torch.autograd</code> </summary>
+
+- `Back Propagation`: An algorithm to adjust the `weights` in a neural network according to the `gradient` of the `loss function`. E.g. algorithm: `Stochastic Gradient Descent`    
+- `Gradient`: Partial derivative of a multivariable loss/cost function
+- `Loss function`: It is the difference between the expected output and actual output
+- `Gradient Descent`: Adjust the weights according to the gradient such that loss curve keeps reducing (i.e. reduce loss to 0) `w = w - learning_rate * gradient_wrt_w`
+- `Stochastic`: Occurring by random chance; Selection of each samples in mini_batch occurs by random chance
+     
+ ```python
+ 
+ x = torch.ones(5) # input tensor
+ y = torch.zeros(3) # expected output
+ # requires_grad argument is set to True to `w` and `b`
+ w = torch.randn(5, 3, requires_grad=True) 
+     
+ ```
+     
+ - The above code constructs the below **computational graph**
+ 
+  ![image](https://user-images.githubusercontent.com/24909551/161719441-3569dd3f-a9e2-4af5-9835-b96da11f0dfa.png)
+
+     
     
 </details>
