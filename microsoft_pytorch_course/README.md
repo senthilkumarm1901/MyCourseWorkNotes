@@ -579,7 +579,19 @@ def test_loop(testdataloader, model, loss_fn):
     correct /= size
     
     print(f"Test Accuracy {correct*100}; Test Data Average Loss = {test_loss}")
-                            
+
+**How to save and load the model?**    
+```python    
+# pytorch models save the parameters in a internal state dictionary called `state_dict`
+torch.save(model.state_dict(),"data/modelname.pth")
+    
+# infer from a saved model
+# instantiate the model architecture class
+model = NeuralNetwork()
+model.load_state_dict(torch.load("data/modelname.pth"))
+# the eval method is called before inferencing so that the batch normalization dropout layers are set to `evaluation` mod
+# Failing to do this can yield inconsistent inference results
+model.eval()
 ```    
 
 **Summary**:
@@ -587,5 +599,8 @@ def test_loop(testdataloader, model, loss_fn):
 - Computing `gradient on Loss function` w.r.t parameters (that the model learns) helps the `optimizer` to know the appropriate adjustments to make on the parameters
 - `Loss function` is minimized during training    
 </details> 
+     
+     
+     
           
 Source: docs.microsoft.com/en-US/learn    
