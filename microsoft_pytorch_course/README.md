@@ -508,6 +508,7 @@ model = NeuralNetwork()
 - `batch_size`: The number of data samples seen by the model before updating its weights. (derived parameter `steps = total_training_data/batch_size` - the number of batches needed to complete an epoch)
 - `learning_rate`: How much to change the weights in the `w = w - learning_rate * gradient`. Smaller value means the model will take a longer time to find best weights. Larger value of learning_rate might make the NN miss the optimal weights because we might step over the best values
 
+**Common Loss Functions**:    
 - nn.MSELoss # Mean Squared Error
 - nn.NLLLoss #Negative Log Likelihood    
 - nn.CrossEntropyLoss # = combine(`nn.LogSoftmax` and `nn.NLLLoss`)   
@@ -543,8 +544,48 @@ for i in range(epochs):
     test_loop(test_dataloader,model, loss_fn)
 print("Over!")    
 ```   
+```python
+def train_loop(traindataloader, model, loss_fn, optimizer):
+    for X, y in traindataloader:
+        # forward pass
+        pred = model(X)
+        
+        # compute loss
+        loss = loss_fn(pred, y)
+        
+        # backpropagation
+        optimizer.zero_grad()
+        optimizer.backward()
+        optimizer.step()
+        
+        print(f"Loss: {loss.item()}")
+ 
+ 
+ 
+def test_loop(testdataloader, model, loss_fn):
+    size = len(testdataloader.dataset)
+    test_loss, correct = 0, 0
     
+    with torch.no_grad():
+        for X,y in testdataloader:
+            pred = model(X)
+            test_loss += loss_fn(pred, y).item()
+            # find out where argmax index is same as that actual
+            # then convert into float
+            # sum across all of the records in the batch size
+            # .item() - converts pytorch tensor into Python value
+            correct += (pred.argmax(dim=1)==y).type(torch.float).sum().item()
+    test_loss /= size
+    correct /= size
     
+    print(f"Test Accuracy {correct*100}; Test Data Average Loss = {test_loss}")
+                            
+```    
+
+**Summary**:
+- `Loss function` indicates the degree of dissimilarity between actual and predicted values
+- Computing `gradient on Loss function` w.r.t parameters (that the model learns) helps the `optimizer` to know the appropriate adjustments to make on the parameters
+- `Loss function` is minimized during training    
 </details> 
           
 Source: docs.microsoft.com/en-US/learn    
