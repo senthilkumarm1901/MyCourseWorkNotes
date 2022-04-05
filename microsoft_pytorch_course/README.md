@@ -380,6 +380,8 @@ Layer: linear_relu_stack.4.bias | Size: torch.Size([10])
 </details>
  
  <details> <summary> Automatic Differentiation <code>torch.autograd</code> </summary>
+     
+- `torch.autograd` is the engine that automatically computes gradients during model optimization     
 
 - `Back Propagation`: An algorithm to adjust the `weights` in a neural network according to the `gradient` of the `loss function`. E.g. algorithm: `Stochastic Gradient Descent`    
 - `Gradient`: Partial derivative of a multivariable loss/cost function
@@ -393,13 +395,57 @@ Layer: linear_relu_stack.4.bias | Size: torch.Size([10])
  y = torch.zeros(3) # expected output
  # requires_grad argument is set to True to `w` and `b`
  w = torch.randn(5, 3, requires_grad=True) 
-     
+ b = torch.randn(3, requires_grad=True)
+ z = torch.matmul(x,w) + b
+ loss = torch.nn.functional.binary_cross_entropy_with_logits(z,y)
  ```
      
  - The above code constructs the below **computational graph**
  
   ![image](https://user-images.githubusercontent.com/24909551/161719441-3569dd3f-a9e2-4af5-9835-b96da11f0dfa.png)
-
      
-    
+ - Only variables `w` and `b` are passed the `requires_grad` argument
+ - `<variable>.grad_fn` stores the reference to the backward propagation function
+
+- By default, we can perform gradient calculations `backward` only once (for performance reasons)
+- If we need to do several `backward` calls on the same graph, we need to pass `retain_graph=True`
+
+```python
+ loss.backward()
+ print(b.grad)
+ print(w.grad) 
+```
+     
+     
+**Different ways of disabling gradient tracking**:
+- Disabling gradient tracking is needed when doing inference (where only forward pass is needed)
+- Disabling some parameters in your neural network as **forzen parameters**. This is a common scenario for fine-tuning a pre-trained network.
+- 1. `with torch.no_grad():` context manager
+
+```python
+with torch.no_grad():
+     z = torch.matmul(x,w) + b
+# now z will have z.requires_grad == True
+```     
+
+- 2. disable gradient tracking using `detach()` method
+
+```python
+z = torch.matmul(x,w) + b
+z_det = z.detach()   
+# now z_det will have z_det.requires_grad == True
+```    
+
+**About Directed Acyclic Graph based backpropagation**:
+- `autograd` keeps a record of all data and the executed operations in a directed acyclic graph (DAG) consisting of `torch.autograd.Function` objects
+- While doing `forward pass` on a tensor with `requires_grad=True` argument, 
+    - the forward pass operation is computed to obtain a resulting tensor
+    - the backward `gradient` function is maintained (sort of like `instantiated`) in the DAG (aka computational graph)
+     
+- When the `.backward()` is called, the `autograd` then:
+    - computes the gradients from each `.grad_fn`
+    - accumulates the resulting gradient values in the respective tensor's `.grad` attribute
+    - computes back propagation from root (output tensors) till leaves (the input tensors with `requires_grad` = True)
+- *DAGs are dynamic in PyTorch*: The graph is recreated from scratch after each `.backward()` call
+     
 </details>
