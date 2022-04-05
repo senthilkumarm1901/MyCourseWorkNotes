@@ -324,9 +324,18 @@ print(hidden1.size())
 - **Step 3**: Apply Relu activation on the linear transformation
     
 ```python
-relu_activation = nn.ReLU()
+relu_activation = nn.ReLU() #instantiate
 hidden1 = relu_activation(hidden1)
 ```    
+- **Step 4**: Compute the logits
     
+
+    
+- **Step 5**: Apply `Softmax` function
+    
+- Full NN workflow: 
+ 
+![image](https://user-images.githubusercontent.com/24909551/161696907-8672f820-3293-4390-b153-bf702731352d.png)
+
  
 </details>
