@@ -449,3 +449,66 @@ z_det = z.detach()
 - *DAGs are dynamic in PyTorch*: The graph is recreated from scratch after each `.backward()` call
      
 </details>
+
+<details> <summary> Model Parameters Optimization </summary>    
+
+- How do you optimize the model parameters? Using `optimizers` (e.g.: SGD, `adam`, etc.,)
+    
+- A revisit of the codes from prev modules    
+```python    
+%matplotlib inline
+import torch
+from torch import nn
+from torch.utils.data import DataLoader #for iterating through the dataset
+from torchvision import datasets
+from torchvision.transforms import ToTensor, Lambda
+
+training_data = datasets.FashionMNIST(
+                root="data",
+                train=True,
+                download=True,
+                transform=ToTensor()
+                )
+
+test_data = datasets.FashionMNIST(
+                root="data",
+                train=False,
+                download=True,
+                transform=ToTensor()
+                )
+                
+train_dataloader = DataLoader(training_data, batch_size=64)
+test_dataloader = DataLoader(test_data, batch_size=64)
+
+class NeuralNetwork(nn.Module):
+    def __init__(self):
+        super(NeuralNetwork, self).__init__()
+        self.flatten = nn.Flatten()
+        self.linear_relu_stack = nn.Sequential(
+                                    nn.Linear(28*28, 512),
+                                    nn.ReLU(),
+                                    nn.Linear(512,512),
+                                    nn.ReLU(),
+                                    nn.Linear(512,10),
+                                    nn.ReLU()
+                                )    
+    
+    def forward(self, x):
+        x = self.flatten(x)
+        logits = self.linear_relu_stack(x)
+        return logits
+
+# instantiate the class
+model = NeuralNetwork()    
+```    
+    
+**Hyper parameters**:
+    
+- `num_of_epochs`: The number of times the entire training dataset is pass through the network
+- `batch_size`: The number of data samples seen by the model before updating its weights. (derived parameter `steps = total_training_data/batch_size` - the number of batches needed to complete an epoch)
+- `learning_rate`: How much to change the weights in the `w = w - learning_rate * gradient`. Smaller value means the model will take a longer time to find best weights. Larger value of learning_rate might make the NN miss the optimal weights because we might step over the best values
+    
+    
+</details> 
+          
+Source: docs.microsoft.com/en-US/learn    
