@@ -452,7 +452,7 @@ z_det = z.detach()
 
 <details> <summary> Model Parameters Optimization </summary>    
 
-- How do you optimize the model parameters? Using `optimizers` (e.g.: SGD, `adam`, etc.,)
+- How do you optimize the model parameters? Using `optimizers` (e.g.: SGD, `adam`, etc.,) that take in arguments such as `type_of_optimizer`, `model.parameters()` and `learning_rate`
     
 - A revisit of the codes from prev modules    
 ```python    
@@ -507,6 +507,42 @@ model = NeuralNetwork()
 - `num_of_epochs`: The number of times the entire training dataset is pass through the network
 - `batch_size`: The number of data samples seen by the model before updating its weights. (derived parameter `steps = total_training_data/batch_size` - the number of batches needed to complete an epoch)
 - `learning_rate`: How much to change the weights in the `w = w - learning_rate * gradient`. Smaller value means the model will take a longer time to find best weights. Larger value of learning_rate might make the NN miss the optimal weights because we might step over the best values
+
+- nn.MSELoss # Mean Squared Error
+- nn.NLLLoss #Negative Log Likelihood    
+- nn.CrossEntropyLoss # = combine(`nn.LogSoftmax` and `nn.NLLLoss`)   
+ 
+```python
+# initialize the loss function
+loss_fn = nn.CrossEntropyLoss()
+```    
+
+```python
+# initialize the optimizer
+optimizer = torch.optim.SGD(model.parameters(),lr=learning_rate)
+# key optimizer steps
+# by default, gradients add up in PyTorch
+# we zero out in every iteration
+optimizer.zero_grad() 
+# performs the gradient computation steps (across the DAG)
+optimizer.backward()
+# adjust the weights
+optimizer.step()
+```    
+
+- `loss_fn` and `optimizer` are passed to `train_loop` and just `loss_fn` to `test_loop`    
+    
+```python
+loss_fn = nn.CrossEntropyLoss()
+optimizer = torch.optim.SGD(model.parameters(),lr=learning_rate)
+
+epochs = 10
+for i in range(epochs):
+    print(f"Epoch {i+1}\n ----------------------------")
+    train_loop(train_dataloader, model, loss_fn, optimizer)
+    test_loop(test_dataloader,model, loss_fn)
+print("Over!")    
+```   
     
     
 </details> 
