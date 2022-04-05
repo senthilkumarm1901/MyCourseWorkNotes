@@ -580,7 +580,12 @@ def test_loop(testdataloader, model, loss_fn):
     
     print(f"Test Accuracy {correct*100}; Test Data Average Loss = {test_loss}")
 
-**How to save and load the model?**    
+```   
+</details>    
+
+<details> <summary> How to save, load and export PyTorch models</summary>   
+    
+**How to save and load the model for inference?**    
 ```python    
 # pytorch models save the parameters in a internal state dictionary called `state_dict`
 torch.save(model.state_dict(),"data/modelname.pth")
@@ -594,11 +599,22 @@ model.load_state_dict(torch.load("data/modelname.pth"))
 model.eval()
 ```    
 
-**Summary**:
-- `Loss function` indicates the degree of dissimilarity between actual and predicted values
-- Computing `gradient on Loss function` w.r.t parameters (that the model learns) helps the `optimizer` to know the appropriate adjustments to make on the parameters
-- `Loss function` is minimized during training    
-</details> 
+**How to export a pytorch model to run in any Programming Language/Platform**: <br>
+    
+- **ONNX**: Open Neural Network Exchange 
+- Converting `PyTorch` model to `onnx` format aids in running the model in Java, Javascript, C# and ML.NET
+    
+```python
+# while explorting pytorch model to onnx, 
+# we'd have to pass a sample input of the right shape
+# this will help produce a `persisted` ONNX model    
+import torch.onnx as onnx
+input_image = torch.zeros((1,28,28))
+onnx_model_location = 'data/model.onnx'
+onnx.export(model, input_image, onnx_model)
+```    
+    
+</details>
      
      
      
