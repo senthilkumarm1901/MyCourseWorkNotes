@@ -287,7 +287,7 @@ model = NeuralNetwork().to(device)
 ```
 
 - How a forward pass would be like: 
-    - Why `model(X)` instead of `model.forward(X)`? [Source]() 
+    - Why `model(X)` instead of `model.forward(X)`? [Source](https://stackoverflow.com/questions/55338756/why-there-are-different-output-between-model-forwardinput-and-modelinput) 
     
 ```python
 x = torch.rand(1, 28, 28, device=device)
@@ -302,20 +302,31 @@ print("Weights stored in first layer: {model.linear_relu_stack[0].weight} \n")
 print("Bias stored in first layer: {model.linear_relu_stack[0].bias} \n") 
 ```
 
-- Convert `28*28` into a contiguous array of 784 pixel values
+- **Step 1**:Convert `28*28` into a contiguous array of 784 pixel values
     
 ```python
 input_image = torch.rand(3, 28, 28)
 print(input_image.size())
 # step 1: Flatten the input image
 flatten = nn.Flatten() # instantitate
-flat_image = flatten(input_image)  # call
+flat_image = flatten(input_image)  # pass the prev layer (input) into the instance
 print(flat_image.size())
+```
+- **Step 2**: Dense or linear layer in PyTorch `weight * input + bias`
+    
+```python    
 # step 2: apply linear transformation `weight * input + bias`
 layer1 = nn.Linear(in_features=28*28, out_features=20) # instantiate
-hidden1 = layer1(flat_image)
+hidden1 = layer1(flat_image) # pass the prev layer (flattened image) into the instance
 print(hidden1.size())
 ```
-   
+
+- **Step 3**: Apply Relu activation on the linear transformation
+    
+```python
+relu_activation = nn.ReLU()
+hidden1 = relu_activation(hidden1)
+```    
+    
  
-    </details>
+</details>
