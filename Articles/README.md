@@ -258,3 +258,20 @@ source1: [Pre-trained Models for Natural Language Processing: A Survey](https://
 source2: [Evolution of Transfer Learning in NLP](https://arxiv.org/abs/1910.07370)
 
 Table of Contents: WIP
+
+<h1 align="center"> Connected Mobility Comparison of Companies </h1>
+
+- What is a mobility company? 
+    - Leveraging data around how people use their vehicles for movement to provide `customized`, `contextual` services
+
+- What avenues are they impacting?
+    - Safety:
+          - Emergency Assistance
+          - Automatic Collision Notification
+          - Stolen Vehicle Locator
+    - In-vehicle Telematics Data and GPS:
+          - Roadside Assistance
+          - Navigation Services     
+          - Conciere services
+    - Mobile App
+    - 
