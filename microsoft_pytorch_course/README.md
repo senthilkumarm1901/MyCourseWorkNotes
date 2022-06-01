@@ -526,7 +526,7 @@ optimizer = torch.optim.SGD(model.parameters(),lr=learning_rate)
 # we zero out in every iteration
 optimizer.zero_grad() 
 # performs the gradient computation steps (across the DAG)
-optimizer.backward()
+loss.backward()
 # adjust the weights
 optimizer.step()
 ```    
