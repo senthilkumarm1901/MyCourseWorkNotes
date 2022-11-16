@@ -14658,7 +14658,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="A-Gentle-Introduction-to-the-World-of-Bash-Scripting">A Gentle Introduction to the World of Bash Scripting<a class="anchor-link" href="#A-Gentle-Introduction-to-the-World-of-Bash-Scripting">&#182;</a></h1>
+<h1 align="center"> man <code>ShellScripting</code> </h1><h4 align="center">A quick guide <i>manual</i> to the world of Bash Scripting </h4>
 </div>
 </div>
 </div>
@@ -14669,12 +14669,81 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Major-Sections">Major Sections<a class="anchor-link" href="#Major-Sections">&#182;</a></h2><ul>
-<li>The Theory of Bash Scripting  </li>
-<li>Single-line Commands | Walkthrough with Examples</li>
-<li>Shell Scripting | Examples Continued</li>
-<li>CLI in AWS</li>
+<h2 align="center"> Motivation and Purpose </h2><p>Arguably, Shell Scripting is the <strong>often untaught foundation</strong> to the most important skills in software engineering</p>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You may have seen <code>Shell Commands</code> in</p>
+<ul>
+<li>Git</li>
+<li>Makefile, VirtualEnv or Any Software Packaging</li>
+<li>Docker, Kubernetes</li>
+<li>Server Administration</li>
+<li>Application Deployment</li>
+<li>Cloud Computing &amp;</li>
+<li>...</li>
 </ul>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>This session is  <br></p>
+<ul>
+<li><b>NOT</b> about Linux but about Shell Scripting</li>
+<li><b>NOT</b> meant to cover esoteric commands</li>
+</ul>
+<hr>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><b>Purpose</b> of this session is <br></p>
+<ul>
+<li>To cover a selected list of useful bash scripting utilities</li>
+<li>To remove the reluctance in writing/interpreting shell commands</li>
+<li>To inform where Shell Scripting is useful and where it is not 
+<br>
+<br></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 align="center"> Sections </h2><ol>
+<li>Theory Fundamentals behind Bash Scripting  </li>
+<li>Single-line Command Recipes </li>
+<li>Advancing to Shell Scripting Files</li>
+<li>AWS CLI</li>
+<li>Conclusion</li>
+</ol>
 
 </div>
 </div>
@@ -14686,7 +14755,7 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="The-Theory-of-Bash-Scripting">The Theory of Bash Scripting<a class="anchor-link" href="#The-Theory-of-Bash-Scripting">&#182;</a></h3>
+<h3 align="center"> 1. Theory Fundamentals behind Bash Scripting  </h3>
 </div>
 </div>
 </div>
@@ -14707,7 +14776,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section><section>
+</div><div class="fragment">
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14722,7 +14791,7 @@ div.jp-OutputPrompt {
 </div>
 </div>
 </div>
-</div></section><section>
+</div></div></section><section>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -14784,8 +14853,859 @@ div.jp-OutputPrompt {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Single-line-Commands">Single-line Commands<a class="anchor-link" href="#Single-line-Commands">&#182;</a></h3><p><em>Walkthrough with Examples</em></p>
+<h3 align="center">  2. Single-line Command Recipes</h3>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Unzipping the Data [1/6] </h4><ul>
+<li><strong>Purpose</strong>: Show the dir and files</li>
+<li><strong>Utility</strong>: <code>tree</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/datasets % tree 
+.
+└── text_datasets
+    ├── ag_news
+    │   └── ag_news_csv.tar.gz
+    ├── dbpedia
+    │   └── dbpedia_csv.tar.gz
+    └── yelp_reviews
+        └── yelp_review_full_csv.tar.gz
 
+<span class="m">4</span> directories, <span class="m">3</span> files
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Purpose</strong>: Find the size of the archived files</li>
+<li><strong>Utilities</strong>: <code>find</code> + <code>xrgs</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/datasets % find . -name <span class="s2">&quot;*.tar*&quot;</span> <span class="p">|</span> xargs du -hs 
+187M    ./text_datasets/yelp_reviews/yelp_review_full_csv.tar.gz
+ 12M    ./text_datasets/ag_news/ag_news_csv.tar.gz
+ 65M    ./text_datasets/dbpedia/dbpedia_csv.tar.gz
+</pre></div>
+<ul>
+<li><strong>Terminal Reading</strong>: <code>man xargs</code> &amp;&amp; <code>man du</code>  | <code>man find</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Purpose</strong>: Unzip files across directories</li>
+<li><strong>Utilities</strong>: <code>tar</code>, <code>sed</code>, <code>find</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/datasets % <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*.tar*&quot;</span> <span class="p">|</span> sed -e <span class="s1">&#39;s|/[^/]*$||g&#39;</span> <span class="k">)</span><span class="p">;</span> <span class="k">do</span> tar -xvf <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span>/*.tar.* -C <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="p">;</span> <span class="k">done</span> 
+x yelp_review_full_csv/
+x yelp_review_full_csv/readme.txt
+x yelp_review_full_csv/train.csv
+x yelp_review_full_csv/test.csv
+x ag_news_csv/
+x ag_news_csv/train.csv
+x ag_news_csv/test.csv
+x ag_news_csv/classes.txt
+x ag_news_csv/readme.txt
+x dbpedia_csv/
+x dbpedia_csv/classes.txt
+x dbpedia_csv/test.csv
+x dbpedia_csv/train.csv
+x dbpedia_csv/readme.txt
+</pre></div>
+<ul>
+<li><strong>Terminal Reading</strong>: <code>man tar</code> (search <code>/-x | -v | -z | -f</code>)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Basic Stats [2/6] </h4><ul>
+<li><strong>Purpose</strong>: Number of Rows</li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>wc</code> , <code>grep</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/*/text_datasets % <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;Number of rows in </span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="o">&amp;&amp;</span>  wc -l <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> grep -o <span class="s2">&quot;[0-9]*&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span><span class="o">)</span><span class="p">;</span> <span class="k">done</span>
+Number of rows <span class="k">in</span> ./yelp_reviews/yelp_review_full_csv/test.csv
+<span class="m">50000</span>
+
+Number of rows <span class="k">in</span> ./yelp_reviews/yelp_review_full_csv/train.csv
+<span class="m">650000</span>
+
+Number of rows <span class="k">in</span> ./ag_news/ag_news_csv/test.csv
+<span class="m">7600</span>
+
+Number of rows <span class="k">in</span> ./ag_news/ag_news_csv/train.csv
+<span class="m">120000</span>
+
+Number of rows <span class="k">in</span> ./dbpedia/dbpedia_csv/test.csv
+<span class="m">70000</span>
+
+Number of rows <span class="k">in</span> ./dbpedia/dbpedia_csv/train.csv
+<span class="m">560000</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Purpose</strong>: Number of Columns</li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>head</code> , <code>sed</code></li>
+</ul>
+
+<pre><code>senthilkumar.m@BashScripter ~/*/text_datasets % for f in $(find . -name "*.csv"); do (echo "*****$f***": &amp;&amp;  echo "Number of Columns:" &amp;&amp;  head -n 1 "$f"| sed 's/","/"\n"/g' |wc -l &amp;&amp; echo) ; done
+*****./yelp_reviews/yelp_review_full_csv/test.csv***:
+Number of Columns:
+       2
+
+*****./yelp_reviews/yelp_review_full_csv/train.csv***:
+Number of Columns:
+       2
+
+*****./ag_news/ag_news_csv/test.csv***:
+Number of Columns:
+       3
+
+*****./ag_news/ag_news_csv/train.csv***:
+Number of Columns:
+       3
+
+*****./dbpedia/dbpedia_csv/test.csv***:
+Number of Columns:
+       2
+
+*****./dbpedia/dbpedia_csv/train.csv***:
+Number of Columns:
+       2</code></pre>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Looking into the Content [3/6] </h4><ul>
+<li><strong>Purpose</strong>: Human understandable display of 1 line in each file </li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>head</code> , <code>sed</code>, <code>nl</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*train.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="o">(</span><span class="nb">echo</span> <span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">&quot;*********</span><span class="nv">$f</span><span class="s2">*******:&quot;</span> <span class="o">&amp;&amp;</span> head -n <span class="m">1</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> sed <span class="s1">&#39;s/,&quot;/\n&quot;/g&#39;</span> <span class="p">|</span> nl<span class="o">)</span><span class="p">;</span> <span class="k">done</span>
+
+*********./yelp_reviews/yelp_review_full_csv/train.csv*******:
+     <span class="m">1</span>  <span class="s2">&quot;5&quot;</span>
+     <span class="m">2</span>  <span class="s2">&quot;dr. goldberg offers everything i look for in a general practitioner.  he&#39;s nice and easy to talk to without being patronizing; he&#39;s always on time in seeing his patients; ...&quot;</span>
+
+*********./ag_news/ag_news_csv/train.csv*******:
+     <span class="m">1</span>  <span class="s2">&quot;3&quot;</span>
+     <span class="m">2</span>  <span class="s2">&quot;Wall St. Bears Claw Back Into the Black (Reuters)&quot;</span>
+     <span class="m">3</span>  <span class="s2">&quot;Reuters - Short-sellers, Wall Street&#39;s dwindling\band of ultra-cynics, are seeing green again.&quot;</span>
+
+*********./dbpedia/dbpedia_csv/train.csv*******:
+     <span class="m">1</span>  <span class="m">1</span>
+     <span class="m">2</span>  <span class="s2">&quot;E. D. Abbott Ltd&quot;</span>
+     <span class="m">3</span>  <span class="s2">&quot; Abbott of Farnham E D Abbott Limited was a British coachbuilding business based in Farnham Surrey trading under that name from 1929. A major part of their output was under sub-contract to motor vehicle manufacturers. Their business closed in 1972.&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Looking into the Classes [4/6] </h4><ul>
+<li><strong>Purpose</strong>: What do the class numbers represent? </li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>cat</code> ,<code>nl</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*classes.txt&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;*******</span><span class="nv">$f</span><span class="s2">*****&quot;</span><span class="p">;</span> cat <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span><span class="p">|</span>nl<span class="o">)</span><span class="p">;</span> <span class="k">done</span>
+*******./ag_news/ag_news_csv/classes.txt*****
+     <span class="m">1</span>  World
+     <span class="m">2</span>  Sports
+     <span class="m">3</span>  Business
+     <span class="m">4</span>  Sci/Tech
+*******./dbpedia/dbpedia_csv/classes.txt*****
+     <span class="m">1</span>  Company
+     <span class="m">2</span>  EducationalInstitution
+     <span class="m">3</span>  Artist
+     <span class="m">4</span>  Athlete
+     <span class="m">5</span>  OfficeHolder
+     <span class="m">6</span>  MeanOfTransportation
+     <span class="m">7</span>  Building
+     <span class="m">8</span>  NaturalPlace
+     <span class="m">9</span>  Village
+    <span class="m">10</span>  Animal
+    <span class="m">11</span>  Plant
+    <span class="m">12</span>  Album
+    <span class="m">13</span>  Film
+    <span class="m">14</span>  WrittenWork
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Distribution of Classes - <code>Shell Scripting</code> vs Python [5A/6] </h4><ul>
+<li><strong>Purpose</strong>: What do the class numbers represent? </li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>for</code> ,<code>awk</code>, <code>sort</code>, <code>uniq</code></li>
+<li><strong>Time Taken</strong>: <code>13 seconds</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % <span class="nb">time</span> <span class="o">(</span><span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*train.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;*******</span><span class="nv">$f</span><span class="s2">*****&quot;</span> <span class="o">&amp;&amp;</span>  awk -F <span class="s1">&#39;,&#39;</span> <span class="s1">&#39;{print $1}&#39;</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="o">)</span> <span class="p">;</span> <span class="k">done</span><span class="o">)</span>
+*******./yelp_reviews/yelp_review_full_csv/train.csv*****
+<span class="m">130000</span> <span class="s2">&quot;1&quot;</span>
+<span class="m">130000</span> <span class="s2">&quot;2&quot;</span>
+<span class="m">130000</span> <span class="s2">&quot;3&quot;</span>
+...
+...
+<span class="m">40000</span> <span class="m">4</span>
+<span class="m">40000</span> <span class="m">5</span>
+<span class="m">40000</span> <span class="m">6</span>
+<span class="m">40000</span> <span class="m">7</span>
+<span class="m">40000</span> <span class="m">8</span>
+<span class="m">40000</span> <span class="m">9</span>
+<span class="o">(</span> <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*train.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span><span class="p">;</span> <span class="o">(</span> <span class="nb">echo</span> <span class="s2">&quot;*******</span><span class="nv">$f</span><span class="s2">*****&quot;</span> <span class="o">&amp;&amp;</span> awk -<span class="o">)</span>  <span class="m">12</span>.80s user <span class="m">0</span>.23s system <span class="m">101</span>% cpu <span class="m">12</span>.813 total
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Distribution of Classes - Shell Scripting vs <code>Python</code> [5B/6] </h4><ul>
+<li><strong>Purpose</strong>: What do the class numbers represent? </li>
+<li><strong><s>Utilities</s></strong>: <code>Python</code></li>
+<li><strong>Time Taken</strong>: <code>5.7 seconds</code></li>
+</ul>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">file_names_with_path</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s2">&quot;./*/*/*train.csv&quot;</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">each_file</span> <span class="ow">in</span> <span class="n">file_names_with_path</span><span class="p">:</span>
+    <span class="n">ip</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">each_file</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;********</span><span class="si">{</span><span class="n">each_file</span><span class="si">}</span><span class="s2">*****&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ip</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">())</span>
+
+<span class="c1"># python3 test_python_code.py  5.29s user 0.52s system 100% cpu 5.759 total</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Text Datasets - Distribution of Classes - `Picture Abhi Bakhi Hai!` [6/6] </h4><ul>
+<li><strong>Purpose</strong>: What do the class numbers represent? </li>
+<li><strong>Utilities</strong>: <code>find</code>, <code>for</code> ,<s>`awk`</s>, <code>cut</code>, <code>sort</code>, <code>uniq</code></li>
+<li><strong>Time Taken</strong>: <code>4.3 seconds</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % <span class="nb">time</span> <span class="o">(</span><span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*train.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span> <span class="o">(</span><span class="nb">echo</span> <span class="s2">&quot;*******</span><span class="nv">$f</span><span class="s2">*****&quot;</span> <span class="o">&amp;&amp;</span>  cat <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d<span class="s1">&#39;,&#39;</span> -f1 <span class="p">|</span> sort <span class="p">|</span> uniq -c <span class="o">)</span> <span class="p">;</span> <span class="k">done</span><span class="o">)</span>
+*******./yelp_reviews/yelp_review_full_csv/train.csv*****
+<span class="m">130000</span> <span class="s2">&quot;1&quot;</span>
+<span class="m">130000</span> <span class="s2">&quot;2&quot;</span>
+...
+...
+<span class="m">40000</span> <span class="m">4</span>
+<span class="m">40000</span> <span class="m">5</span>
+<span class="m">40000</span> <span class="m">6</span>
+<span class="m">40000</span> <span class="m">7</span>
+<span class="m">40000</span> <span class="m">8</span>
+<span class="m">40000</span> <span class="m">9</span>
+<span class="o">(</span> <span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*train.csv&quot;</span><span class="k">)</span><span class="p">;</span> <span class="k">do</span><span class="p">;</span> <span class="o">(</span> <span class="nb">echo</span> <span class="s2">&quot;*******</span><span class="nv">$f</span><span class="s2">*****&quot;</span> <span class="o">&amp;&amp;</span> cat  <span class="o">)</span>  <span class="m">4</span>.49s user <span class="m">0</span>.22s system <span class="m">107</span>% cpu <span class="m">4</span>.373 total
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 align="center"> Shell Scripting (4.5 sec) wins over Python (5.7 sec). <br>Okay, let's have a better rematch </h5>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 align="center"> 3. Advancing to Shell Scripting Files </h3>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Shell Script with positional arguments</h4><div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/*/text_datasets % cat basic_shell_with_positional_args.sh 
+<span class="c1">#!/bin/sh</span>
+<span class="nb">echo</span> <span class="s2">&quot;This tutorial is not about </span><span class="nv">$1</span><span class="s2">. It is about </span><span class="nv">$2</span><span class="s2">.&quot;</span> 
+<span class="nb">echo</span> <span class="s2">&quot;Did you like it? </span><span class="nv">$3</span><span class="s2">&quot;</span>
+</pre></div>
+<ul>
+<li>Shebang line at 1. <code>#!/bin/sh</code> or <code>#!/bin/bash</code> or <code>#!/bin/zsh</code> </li>
+<li>Most terminal (CLI interpreters) take care of it even when not expliticity mentioned by assuming it to be <code>bash</code> or <code>sh</code></li>
+</ul>
+<hr>
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>sh basic_shell.sh Linux <span class="s2">&quot;Shell Scripting&quot;</span> Python
+
+<span class="c1"># ./basic_shell.sh</span>
+
+This tutorial is not about Linux. It is about Shell Scripting.
+Did you like it? No
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Shell Script with one-letter keyword arguments</h4><ul>
+<li><strong>Utilities</strong>: <code>getopts</code>, <code>grep</code>, <code>OPTARG</code>, <code>tr</code>,  <code>[:upper:]</code> or <code>[:lower:]</code> or <code>[:space:]</code> </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">while</span> <span class="nb">getopts</span> <span class="s2">&quot;:n:a:l:&quot;</span> opt<span class="p">;</span>
+<span class="k">do</span> 
+    <span class="k">case</span> <span class="si">${</span><span class="nv">opt</span><span class="si">}</span> <span class="k">in</span>
+        n<span class="o">)</span> <span class="nv">NOT</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span><span class="p">;;</span>
+            a<span class="o">)</span> <span class="nv">ABOUT</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span> <span class="p">;;</span>
+        l<span class="o">)</span> <span class="nv">LIKE</span><span class="o">=</span><span class="si">${</span><span class="nv">OPTARG</span><span class="si">}</span> <span class="p">;;</span>
+    <span class="k">esac</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="s2">&quot;This tutorial is not about </span><span class="nv">$NOT</span><span class="s2">. It is about </span><span class="nv">$ABOUT</span><span class="s2">.&quot;</span>
+<span class="c1"># if [ $LIKE = &quot;No&quot; ]; then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$LIKE</span> <span class="p">|</span> grep -i -o <span class="s2">&quot;^N&quot;</span> <span class="p">|</span> tr <span class="s1">&#39;[:upper:]&#39;</span> <span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Did you like it? </span><span class="nv">$LIKE</span><span class="s2">&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;What Shell Scripting man !?!&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Who uses such 40+ years old lang&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Did you like it? </span><span class="nv">$LIKE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+<hr>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % sh shell_w_getopts_args.sh <span class="se">\</span>
+-n Linux <span class="se">\</span>
+-a <span class="s2">&quot;Shell Scripting&quot;</span> <span class="se">\</span>
+-l No
+
+This tutorial is not about Linux. It is about Shell Scripting.
+Did you like it? No
+What Shell Scripting man !?!
+Who uses such <span class="m">40</span>+ years old lang
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Shell Script with word keyword arguments</h4><ul>
+<li><strong>Utilities</strong>: <code>{#VAR}</code>, <code>grep</code>, <code>tr</code>,  <code>[:upper:]</code> or <code>[:lower:]</code> or <code>[:space:]</code> </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="k">for</span> ARGUMENT <span class="k">in</span> <span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span>
+<span class="k">do</span>
+    <span class="nv">KEY_INITIAL</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="nv">$ARGUMENT</span> <span class="p">|</span> cut -f1 -d<span class="o">=</span><span class="k">)</span>
+    <span class="nv">KEY_LENGTH</span><span class="o">=</span><span class="si">${#</span><span class="nv">KEY_INITIAL</span><span class="si">}</span>
+    <span class="nv">KEY</span><span class="o">=</span><span class="si">${</span><span class="nv">KEY_INITIAL</span><span class="p">:</span><span class="nv">2</span><span class="si">}</span>
+    <span class="nv">VALUE</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">ARGUMENT</span><span class="p">:</span><span class="nv">$KEY_LENGTH</span><span class="p">+1</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="nb">export</span> <span class="s2">&quot;</span><span class="nv">$KEY</span><span class="s2">&quot;</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$VALUE</span><span class="s2">&quot;</span>
+    <span class="c1"># echo &quot;$KEY=$VALUE&quot;</span>
+<span class="k">done</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;This tutorial is not about </span><span class="nv">$NOT</span><span class="s2">. It is about </span><span class="nv">$ABOUT</span><span class="s2">.&quot;</span>
+<span class="c1"># if [ $LIKE = &quot;No&quot; ]; then</span>
+<span class="k">if</span> <span class="o">[</span> <span class="k">$(</span><span class="nb">echo</span> <span class="nv">$LIKE</span> <span class="p">|</span> grep -i -o <span class="s2">&quot;^N&quot;</span> <span class="p">|</span> tr <span class="s1">&#39;[:upper:]&#39;</span> <span class="s1">&#39;[:lower:]&#39;</span><span class="k">)</span> <span class="o">=</span> <span class="s1">&#39;n&#39;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Did you like it? </span><span class="nv">$LIKE</span><span class="s2">&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;What Shell Scripting man !?!&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Who uses such 40+ years old lang&quot;</span>
+<span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;Did you like it? </span><span class="nv">$LIKE</span><span class="s2">&quot;</span>
+<span class="k">fi</span>
+</pre></div>
+<hr>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % sh shell_w_full_kw_args.sh <span class="se">\</span>
+--NOT<span class="o">=</span>Linux <span class="se">\</span>
+--ABOUT<span class="o">=</span><span class="s2">&quot;Shell Scripting&quot;</span> <span class="se">\</span>
+--LIKE<span class="o">=</span>No
+
+This tutorial is not about Linux. It is about Shell Scripting.
+Did you like it? No
+What Shell Scripting man !?!
+Who uses such <span class="m">40</span>+ years old lang
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> <code>Shell Script</code> vs Python to Replace Text in csv File </h4><ul>
+<li><code>vi ag_news_classes.json</code> </li>
+</ul>
+<div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;ag_news&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sports&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Business&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Sci/Tech&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;dbpedia&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Company&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;2&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;EducationalInstitution&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;3&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Artist&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;4&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Athlete&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;5&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;OfficeHolder&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;6&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;MeanOfTransportation&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;7&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Building&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;8&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;NaturalPlace&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;9&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Village&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;10&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Animal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;11&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Plant&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;12&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Album&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;13&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Film&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;14&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;WrittenWork&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><p><strong>Utilities</strong>: <code>grep</code>, <code>find</code>, <code>wc</code>, <code>sed</code>, <code>cut</code>, <code>jp</code></p>
+</li>
+<li><p>vi <code>replace_class_num_with_text.sh</code></p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % cat replace_class_num_with_text.zsh 
+<span class="c1">#!/bin/zsh</span>
+<span class="nv">num_of_ag_news_classes</span><span class="o">=</span><span class="k">$(</span>jp -f dict_classes.json <span class="s1">&#39;length(ag_news)&#39;</span><span class="k">)</span>
+<span class="nv">num_of_dbpedia_classes</span><span class="o">=</span><span class="k">$(</span>jp -f dict_classes.json <span class="s1">&#39;length(dbpedia)&#39;</span><span class="k">)</span>
+<span class="nb">echo</span> <span class="nv">$num_of_ag_news_classes</span> <span class="nv">$num_of_dbpedia_classes</span>
+<span class="k">for</span> f <span class="k">in</span> <span class="k">$(</span>find . -name <span class="s2">&quot;*.csv&quot;</span><span class="k">)</span>
+<span class="k">do</span>  
+    <span class="nb">echo</span> <span class="s2">&quot;\n**************************&quot;</span>
+    <span class="c1"># length_of_matched_text=$(echo &quot;$f&quot; | grep -e &#39;ag&#39; -e &#39;db&#39;| wc -m | sed &#39;s/^ *//g&#39;)</span>
+    <span class="nv">dataset</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d<span class="s1">&#39;/&#39;</span> -f2<span class="k">)</span>
+    <span class="nv">file</span><span class="o">=</span><span class="k">$(</span><span class="nb">echo</span> <span class="s2">&quot;</span><span class="nv">$f</span><span class="s2">&quot;</span> <span class="p">|</span> cut -d<span class="s1">&#39;/&#39;</span> -f4<span class="k">)</span>
+    <span class="c1"># echo &quot;$dataset&quot; </span>
+    <span class="c1"># echo &quot;$file&quot;</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$dataset</span> <span class="o">==</span> <span class="s2">&quot;ag_news&quot;</span>  <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;*****First IF: Processing dataset </span><span class="nv">$dataset</span><span class="s2"> and file </span><span class="nv">$file</span><span class="s2">********&quot;</span>
+        <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="m">1</span>..<span class="nv">$num_of_ag_news_classes</span><span class="o">}</span><span class="p">;</span>
+        <span class="k">do</span>
+            <span class="nv">class_name</span><span class="o">=</span><span class="k">$(</span>jp -f dict_classes.json <span class="nv">$dataset</span>.<span class="se">\&quot;</span><span class="nv">$i</span><span class="se">\&quot;</span> -u <span class="p">|</span>sed -e <span class="s1">&#39;s#/##&#39;</span> -e <span class="s1">&#39;s/&quot;//g&#39;</span><span class="k">)</span>
+            <span class="nb">echo</span> <span class="nv">$i</span> <span class="nv">$class_name</span>
+            sed -i -e <span class="s2">&quot;s/</span><span class="nv">$i</span><span class="s2">/</span><span class="nv">$class_name</span><span class="s2">/&quot;</span> <span class="nv">$f</span>
+        <span class="k">done</span>
+    <span class="k">fi</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$dataset</span> <span class="o">==</span> <span class="s2">&quot;dbpedia&quot;</span>  <span class="o">]]</span> <span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> <span class="s2">&quot;*****Second IF: Processing dataset </span><span class="nv">$dataset</span><span class="s2"> and file </span><span class="nv">$file</span><span class="s2">********&quot;</span>
+        <span class="k">for</span> i <span class="k">in</span> <span class="o">{</span><span class="nv">$num_of_dbpedia_classes</span>..1<span class="o">}</span><span class="p">;</span>
+        <span class="k">do</span>
+            <span class="nv">class_name</span><span class="o">=</span><span class="k">$(</span>jp -f dict_classes.json <span class="nv">$dataset</span>.<span class="se">\&quot;</span><span class="nv">$i</span><span class="se">\&quot;</span> -u<span class="p">|</span>sed -e <span class="s1">&#39;s/&quot;//g&#39;</span><span class="k">)</span>
+            <span class="nb">echo</span> <span class="nv">$i</span> <span class="nv">$class_name</span>
+            sed -i -e <span class="s2">&quot;s/</span><span class="nv">$i</span><span class="s2">/\&quot;</span><span class="nv">$class_name</span><span class="s2">\&quot;/&quot;</span> <span class="nv">$f</span>
+        <span class="k">done</span>
+    <span class="k">fi</span>
+<span class="k">done</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Time Taken</strong>: <code>17.7 seconds</code></li>
+</ul>
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % <span class="nb">time</span> zsh replace_class_num_with_text.zsh 
+...
+...
+zsh replace_class_num_with_text.zsh  <span class="m">12</span>.17s user <span class="m">4</span>.93s system <span class="m">96</span>% cpu <span class="m">17</span>.666 total
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets % head -n <span class="m">1</span> ./dbpedia/dbpedia_csv/test.csv
+<span class="s2">&quot;Company&quot;</span>,<span class="s2">&quot;TY KU&quot;</span>,<span class="s2">&quot; TY KU /taɪkuː/ is an American alcoholic beverage company that specializes in sake and other spirits...&quot;</span>
+
+senthilkumar.m@BashScripter ~/text_datasets % head -n <span class="m">1</span> ./dbpedia/dbpedia_csv/test.csv-e
+<span class="m">1</span>,<span class="s2">&quot;TY KU&quot;</span>,<span class="s2">&quot; TY KU /taɪkuː/ is an American alcoholic beverage company that specializes in sake and other spirits...&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 align="center"> Shell Script vs <code>Python</code> to Replace Text in csv File </h4><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">glob</span> <span class="kn">import</span> <span class="n">glob</span>
+<span class="kn">import</span> <span class="nn">re</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;dict_classes.json&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">dict_classes</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">csv_files</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;./*/*/*.csv&#39;</span><span class="p">))</span>
+
+<span class="k">for</span> <span class="n">csv_file</span> <span class="ow">in</span> <span class="n">csv_files</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;ag_news|dbpedia&#39;</span><span class="p">,</span><span class="n">csv_file</span><span class="p">):</span>
+        <span class="k">continue</span>
+    <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;ag_news&#39;</span><span class="p">,</span><span class="n">csv_file</span><span class="p">):</span>
+        <span class="n">repl_dict</span> <span class="o">=</span> <span class="n">dict_classes</span><span class="p">[</span><span class="s1">&#39;ag_news&#39;</span><span class="p">]</span>
+    <span class="k">elif</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;dbpedia&#39;</span><span class="p">,</span> <span class="n">csv_file</span><span class="p">):</span>
+        <span class="n">repl_dict</span> <span class="o">=</span> <span class="n">dict_classes</span><span class="p">[</span><span class="s1">&#39;dbpedia&#39;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">csv_file</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">repl_dict</span><span class="p">)</span>
+    <span class="n">original_file</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;.csv$&#39;</span><span class="p">,</span><span class="s1">&#39;_original.csv&#39;</span><span class="p">,</span><span class="n">csv_file</span><span class="p">)</span> 
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Saving </span><span class="si">{</span><span class="n">original_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span><span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">original_file</span><span class="p">,</span><span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Processing </span><span class="si">{</span><span class="n">csv_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">repl_dict</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">csv_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<ul>
+<li><strong>Time Taken</strong>: <code>8.3 seconds</code></li>
+</ul>
+<div class="highlight"><pre><span></span>...
+...
+python3 python_replace_script.py  <span class="m">7</span>.56s user <span class="m">0</span>.61s system <span class="m">98</span>% cpu <span class="m">8</span>.324 total
+</pre></div>
+
+</div>
+</div>
+</div>
+</div><div class="fragment">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<div class="highlight"><pre><span></span>senthilkumar.m@BashScripter ~/text_datasets_python % head -n <span class="m">1</span> ./dbpedia/dbpedia_csv/train_original.csv 
+<span class="m">1</span>,E. D. Abbott Ltd, Abbott of Farnham E D Abbott Limited was a British coachbuilding business ...
+senthilkumar.m@BashScripter ~/text_datasets_python % head -n <span class="m">1</span> ./dbpedia/dbpedia_csv/train.csv         
+Company,E. D. Abbott Ltd, Abbott of Farnham E D Abbott Limited was a British coachbuilding business ...
+</pre></div>
+
+</div>
+</div>
+</div>
+</div></div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 align="center">Shell Scripting (17.6 sec) miserably loses against Python (8.3 sec)</h5>
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 align="center"> 4. AWS CLI + BASH Scripring </h3>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="(1)-To-upload-multiple-files-to-S3">(1) To upload multiple files to S3<a class="anchor-link" href="#(1)-To-upload-multiple-files-to-S3">&#182;</a></h4><ul>
+<li>Focus: <code>aws s3 cp</code> + <code>find</code> and <code>for</code> loop</li>
+</ul>
+
+<pre><code>#!/bin/zsh
+for f in $(find . -name "meta_data_files_*.csv")
+do 
+    aws s3 cp $f s3://s3_bucket_name/upload_csv/
+done</code></pre>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="(2)-Parsing-JSON-output-from-AWS-CLI-(E.g.-Case---Extract-Periodical-Expense-Report)">(2) Parsing JSON output from AWS CLI (E.g. Case - Extract Periodical Expense Report)<a class="anchor-link" href="#(2)-Parsing-JSON-output-from-AWS-CLI-(E.g.-Case---Extract-Periodical-Expense-Report)">&#182;</a></h4><ul>
+<li>Focus: <code>aws ce get-cost-and-usage</code> + <code>JSON Matching Expression Path (JMESPATH)</code> (<code>jp</code>)</li>
+</ul>
+
+<pre><code>#!/bin/zsh
+
+# boiler plate code accepting inputs
+...
+...
+
+
+aws ce get-cost-and-usage \
+--time-period Start=$start_date,End=$end_date \
+--granularity $type_of_report --metrics "BlendedCost" \
+--group-by Type=DIMENSION,Key=SERVICE \
+--query "ResultsByTime[0].Groups[].Keys" \ # querying a json output
+--output text &gt; aws_services.txt
+
+aws ce get-cost-and-usage \
+--time-period Start=$start_date,End=$end_date \
+--granularity $type_of_report \
+--metrics "BlendedCost" \
+--group-by Type=DIMENSION,Key=SERVICE \
+--query "ResultsByTime[0].Groups[].Metrics.BlendedCost.Amount" \
+--output text | sed -e 's/\t/\n/g'  &gt; aws_cost.txt
+
+echo "Service,Cost" &gt; $aws_cost_report_name
+
+paste -d',' aws_services.txt aws_cost.txt &gt;&gt; $aws_cost_report_name
+
+# how to run the above shell file
+# zsh create_aws_cost_report.sh --start_date=2022-10-01 --end_date=2022-10-31 --type_of_report=MONTHLY</code></pre>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 align="center"> 5. Conclusion </h3>
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Why is Shell Scripting so hard?</strong></p>
+<ul>
+<li>Complexity compounds | Commands like <code>awk</code> and <code>sed</code> are progamming lang on their own</li>
+<li>Every quote, space and stringed together commands have meaning</li>
+<li>Less errors | More unexpected behaviour</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Where is Shell Scripting most useful?</strong></p>
+<ul>
+<li>When the commands are only 5-20 lines long<ul>
+<li>Small repetitive tasks. E.g. For small needs involving AWS, small scripting jobs with <code>jmespath</code></li>
+</ul>
+</li>
+</ul>
+
+<pre><code>for f in *.csv
+do
+     echo $f...
+     some transformation
+done</code></pre>
+<ul>
+<li>A pure shell script written 15-20 years ago could still yield the same result today</li>
+<li>Easier than packaging a Python application | Build process is smaller</li>
+<li>Shell in combination with other language is more useful</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><strong>Where Shell Scripting can be avoided?</strong></p>
+<ul>
+<li>Co-development is hard. Interpretability is tough.</li>
+<li>Errors do not always stop your flow. It will go to the next command</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div></section></section><section><section>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h5 align="center"> Bash Scripting is definitely a useful skill to know in your toolbox </h5>
 </div>
 </div>
 </div>
